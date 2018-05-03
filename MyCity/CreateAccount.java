@@ -4,6 +4,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.charset.Charset;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import org.apache.commons.codec.binary.Hex;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -13,8 +18,13 @@ import javax.swing.JLabel;
 import javax.swing.text.MaskFormatter;
 
 public class CreateAccount {
+	static String username = "";
+	static String password = "";
+	static  JFormattedTextField conPassField = new JFormattedTextField();
+
 	public static void main(String[]args) {
 		run();
+		//encrypt();
 	}
 	
 	public static void run() {
@@ -151,7 +161,6 @@ public class CreateAccount {
 		
 		//create password text box
 		try {
-			JFormattedTextField conPassField = new JFormattedTextField(new MaskFormatter("******************************"));
 			conPassField.setBounds(1050, 265, 275, 30);
 			conPassField.setBackground(Color.WHITE);
 			conPassField.setVisible(true);
@@ -169,11 +178,11 @@ public class CreateAccount {
 		
 		//confirm password text box
 		try {
-			JFormattedTextField conPassField = new JFormattedTextField(new MaskFormatter("******************************"));
-			conPassField.setBounds(1050, 340, 275, 30);
-			conPassField.setBackground(Color.WHITE);
-			conPassField.setVisible(true);
-			createAcc.add(conPassField);
+			JFormattedTextField conPassField2 = new JFormattedTextField(new MaskFormatter("******************************"));
+			conPassField2.setBounds(1050, 340, 275, 30);
+			conPassField2.setBackground(Color.WHITE);
+			conPassField2.setVisible(true);
+			createAcc.add(conPassField2);
 		}
 		catch(Exception ex) {
 			System.out.println("k");
@@ -227,9 +236,31 @@ public class CreateAccount {
 		createAccButton.setBackground(new Color(182,239,225));
 		createAccButton.setBounds(850, 700, 400, 75);
 		createAccButton.setBorderPainted(false);
+		createAccButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			password = conPassField.getText();
+			encrypt();
+			}
+		});
 		createAcc.add(createAccButton);
 		
 		
 		createAcc.setVisible(true);
 	}
+
+	public static void encrypt() {
+		MessageDigest messageDigest;
+		try {
+			messageDigest = MessageDigest.getInstance("MD5");
+			messageDigest.reset();
+			messageDigest.update(password.getBytes(Charset.forName("UTF8")));
+			byte[] resultByte = messageDigest.digest();
+			String result = new String(Hex.encodeHex(resultByte));
+			System.out.println(result);
+		} catch (NoSuchAlgorithmException e) {
+		}
+	}
 }
+
+
+
