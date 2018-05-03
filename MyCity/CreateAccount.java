@@ -15,12 +15,14 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
 public class CreateAccount {
 	static String username = "";
 	static String password = "";
-	static  JFormattedTextField conPassField = new JFormattedTextField();
+	static  JTextField conPassField = new JTextField();
 
 	public static void main(String[]args) {
 		run();
@@ -52,16 +54,11 @@ public class CreateAccount {
 		createAcc.add(FirstName);
 		
 		//text box for first name
-		try {
-			JFormattedTextField fNameField = new JFormattedTextField(new MaskFormatter("********************"));
-			fNameField.setBounds(600, 190, 275, 30);
-			fNameField.setBackground(Color.WHITE);
-			fNameField.setVisible(true);
-			createAcc.add(fNameField);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
+		JTextField fNameField = new JTextField();
+		fNameField.setBounds(600, 190, 275, 30);
+		fNameField.setBackground(Color.WHITE);
+		fNameField.setVisible(true);
+		createAcc.add(fNameField);
 		
 		//middle name JLabel
 		JLabel middleName = new JLabel("Middle Name:");
@@ -70,16 +67,11 @@ public class CreateAccount {
 		createAcc.add(middleName);
 		
 		//text box for middle name
-		try {
-			JFormattedTextField mNameField = new JFormattedTextField(new MaskFormatter("********************"));
-			mNameField.setBounds(600, 265, 275, 30);
-			mNameField.setBackground(Color.WHITE);
-			mNameField.setVisible(true);
-			createAcc.add(mNameField);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
+		JTextField mNameField = new JTextField();
+		mNameField.setBounds(600, 265, 275, 30);
+		mNameField.setBackground(Color.WHITE);
+		mNameField.setVisible(true);
+		createAcc.add(mNameField);
 		
 		//last name JLabel
 		JLabel LastName = new JLabel("Last Name:");
@@ -88,17 +80,12 @@ public class CreateAccount {
 		createAcc.add(LastName);
 				
 		//text box for last name
-		try {
-			JFormattedTextField lNameField = new JFormattedTextField(new MaskFormatter("******************************"));
-			lNameField.setBounds(600, 340, 275, 30);
-			lNameField.setBackground(Color.WHITE);
-			lNameField.setVisible(true);
-			createAcc.add(lNameField);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
-		
+		JTextField lNameField = new JTextField();
+		lNameField.setBounds(600, 340, 275, 30);
+		lNameField.setBackground(Color.WHITE);
+		lNameField.setVisible(true);
+		createAcc.add(lNameField);
+	
 		//address JLabel
 		JLabel addressLabel = new JLabel("Address:");
 		addressLabel.setFont(accFont);
@@ -106,16 +93,11 @@ public class CreateAccount {
 		createAcc.add(addressLabel);
 		
 		//text box for address
-		try {
-			JFormattedTextField addressField = new JFormattedTextField(new MaskFormatter("********************************************************************"));
-			addressField.setBounds(600, 415, 275, 30);
-			addressField.setBackground(Color.WHITE);
-			addressField.setVisible(true);
-			createAcc.add(addressField);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
+		JTextField addressField = new JTextField();
+		addressField.setBounds(600, 415, 275, 30);
+		addressField.setBackground(Color.WHITE);
+		addressField.setVisible(true);
+		createAcc.add(addressField);
 		
 		//email JLabel
 		JLabel emailLabel = new JLabel("Email Address:");
@@ -124,16 +106,11 @@ public class CreateAccount {
 		createAcc.add(emailLabel);
 		
 		//text box for email
-		try {
-			JFormattedTextField addressField = new JFormattedTextField(new MaskFormatter("*********************************************************"));
-			addressField.setBounds(600, 490, 275, 30);
-			addressField.setBackground(Color.WHITE);
-			addressField.setVisible(true);
-			createAcc.add(addressField);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
+		JTextField emailField = new JTextField();
+		emailField.setBounds(600, 490, 275, 30);
+		emailField.setBackground(Color.WHITE);
+		emailField.setVisible(true);
+		createAcc.add(emailField);
 		
 		//username JLabel
 		JLabel usernameLabel = new JLabel("Create Username:");
@@ -142,16 +119,11 @@ public class CreateAccount {
 		createAcc.add(usernameLabel);
 		
 		//text box for username
-		try {
-			JFormattedTextField usernameField = new JFormattedTextField(new MaskFormatter("******************************"));
-			usernameField.setBounds(1050, 190, 275, 30);
-			usernameField.setBackground(Color.WHITE);
-			usernameField.setVisible(true);
-			createAcc.add(usernameField);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
+		JTextField usernameField = new JTextField();
+		usernameField.setBounds(1050, 190, 275, 30);
+		usernameField.setBackground(Color.WHITE);
+		usernameField.setVisible(true);
+		createAcc.add(usernameField);
 		
 		//create password JLabel
 		JLabel createPassLabel = new JLabel("Create Password:");
@@ -160,15 +132,11 @@ public class CreateAccount {
 		createAcc.add(createPassLabel);
 		
 		//create password text box
-		try {
-			conPassField.setBounds(1050, 265, 275, 30);
-			conPassField.setBackground(Color.WHITE);
-			conPassField.setVisible(true);
-			createAcc.add(conPassField);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
+		JPasswordField conPassField = new JPasswordField();
+		conPassField.setBounds(1050, 265, 275, 30);
+		conPassField.setBackground(Color.WHITE);
+		conPassField.setVisible(true);
+		createAcc.add(conPassField);
 		
 		//confirm password JLabel
 		JLabel confirmPassLabel = new JLabel("Confirm Password:");
@@ -177,16 +145,11 @@ public class CreateAccount {
 		createAcc.add(confirmPassLabel);
 		
 		//confirm password text box
-		try {
-			JFormattedTextField conPassField2 = new JFormattedTextField(new MaskFormatter("******************************"));
-			conPassField2.setBounds(1050, 340, 275, 30);
-			conPassField2.setBackground(Color.WHITE);
-			conPassField2.setVisible(true);
-			createAcc.add(conPassField2);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
+		JPasswordField conPassField2 = new JPasswordField();
+		conPassField2.setBounds(1050, 340, 275, 30);
+		conPassField2.setBackground(Color.WHITE);
+		conPassField2.setVisible(true);
+		createAcc.add(conPassField2);
 		
 		//security question JLabel
 		JLabel securityQLabel = new JLabel("Security Question:");
@@ -219,17 +182,12 @@ public class CreateAccount {
 		createAcc.add(securityALabel);
 		
 		//security answer text box
-		try {
-			JFormattedTextField securityAField = new JFormattedTextField(new MaskFormatter("******************************"));
-			securityAField.setBounds(1050, 490, 275, 30);
-			securityAField.setBackground(Color.WHITE);
-			securityAField.setVisible(true);
-			createAcc.add(securityAField);
-		}
-		catch(Exception ex) {
-			System.out.println("k");
-		}
-		
+		JTextField securityAField = new JTextField();
+		securityAField.setBounds(1050, 490, 275, 30);
+		securityAField.setBackground(Color.WHITE);
+		securityAField.setVisible(true);
+		createAcc.add(securityAField);
+	
 		//button to create account
 		JButton createAccButton = new JButton("Create Account");
 		createAccButton.setFont(new Font("Verdana", Font.BOLD, 40));
@@ -261,6 +219,3 @@ public class CreateAccount {
 		}
 	}
 }
-
-
-
