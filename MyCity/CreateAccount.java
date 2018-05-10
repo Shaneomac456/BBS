@@ -264,16 +264,24 @@ public class CreateAccount {
 	
 	public void updateTable() {
 		try {
-			db.insertRecord(fNameField.getText(), mNameField.getText(), lNameField.getText(), addressField.getText(), usernameField.getText(), 
-					password, emailField.getText(), questionList.getSelectedItem().toString(), securityAField.getText());
+			db.createDBTable();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			db.insertRecord(fNameField.getText(), mNameField.getText(), lNameField.getText(), addressField.getText(), emailField.getText(), 
+					usernameField.getText(), password, questionList.getSelectedItem().toString(), securityAField.getText());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	
-
+	public void isTaken() {
+		
+	}
 	public static void encrypt() {
 		MessageDigest messageDigest;
 		try {
