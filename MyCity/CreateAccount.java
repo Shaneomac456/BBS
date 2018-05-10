@@ -187,6 +187,14 @@ public class CreateAccount {
 		securityAField.setVisible(true);
 		createAcc.add(securityAField);
 
+		//button to cancel account
+		JButton cancelButton = new JButton("Cancel");
+		cancelButton.setFont(new Font("Verdana", Font.BOLD, 40));
+		cancelButton.setBackground(new Color(182,239,225));
+		cancelButton.setBounds(1100, 700, 200, 75);
+		cancelButton.setBorderPainted(false);
+		createAcc.add(cancelButton);
+		
 		// button to create account
 		JButton createAccButton = new JButton("Create Account");
 		createAccButton.setFont(new Font("Verdana", Font.BOLD, 40));
