@@ -1,6 +1,7 @@
 package MyCity;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.text.MaskFormatter;
 
 public class ForgotPassword {
@@ -121,18 +123,12 @@ public class ForgotPassword {
 				forgotPassword.add(securityA);
 				
 				//security answer textbox
-				try {
-					JFormattedTextField securityAField = new JFormattedTextField(new MaskFormatter("******************************************"));
-					securityAField.setBounds(800, 500, 300, 50);
-					securityAField.setBackground(Color.WHITE);
-					securityAField.setVisible(true);
-					forgotPassword.add(securityAField);
-				}
-				catch(Exception ex) {
-					System.out.println("k");
-				}
-				
-				
+				JPasswordField securityAField = new JPasswordField();
+				securityAField.setBounds(800, 500, 300, 50);
+				securityAField.setBackground(Color.WHITE);
+				securityAField.setVisible(true);
+				forgotPassword.add(securityAField);
+							
 				//next button to move onto reset password
 				JButton nextButton2 = new JButton ("Next");
 				nextButton2.setFont(new Font("Verdana", Font.BOLD, 40));
@@ -159,16 +155,11 @@ public class ForgotPassword {
 						forgotPassword.add(createNewP);
 						
 						//create new password textbox
-						try {
-							JFormattedTextField newPassField = new JFormattedTextField(new MaskFormatter("********************"));
-							newPassField.setBounds(800, 350, 350, 50);
-							newPassField.setBackground(Color.WHITE);
-							newPassField.setVisible(true);
-							forgotPassword.add(newPassField);
-						}
-						catch(Exception ex) {
-							System.out.println("k");
-						}
+						JPasswordField newPassField = new JPasswordField();
+						newPassField.setBounds(800, 350, 350, 50);
+						newPassField.setBackground(Color.WHITE);
+						newPassField.setVisible(true);
+						forgotPassword.add(newPassField);
 						
 						//confirm password JLabel
 						JLabel confirmNewP = new JLabel("Confirm New Password:");
@@ -177,16 +168,11 @@ public class ForgotPassword {
 						forgotPassword.add(confirmNewP);
 						
 						//confirm password textbox
-						try {
-							JFormattedTextField confirmPassField = new JFormattedTextField(new MaskFormatter("********************"));
-							confirmPassField.setBounds(800, 550, 350, 50);
-							confirmPassField.setBackground(Color.WHITE);
-							confirmPassField.setVisible(true);
-							forgotPassword.add(confirmPassField);
-						}
-						catch(Exception ex) {
-							System.out.println("k");
-						}
+						JPasswordField confirmPassField = new JPasswordField();
+						confirmPassField.setBounds(800, 550, 350, 50);
+						confirmPassField.setBackground(Color.WHITE);
+						confirmPassField.setVisible(true);
+						forgotPassword.add(confirmPassField);
 						
 						//reset password button which will return user to login screen
 						JButton resetPass = new JButton("Reset Password");
@@ -199,8 +185,20 @@ public class ForgotPassword {
 						//action listener for reset password button that returns user to login screen
 						resetPass.addActionListener(new ActionListener() {
 							public void actionPerformed (ActionEvent e) {
-								forgotPassword.setVisible(false);
-								Login.run();
+								if(test(confirmPassField, newPassField)) {
+									CreateAccount.encrypt(newPassField.getText());
+									forgotPassword.setVisible(false);
+									Login.run();
+								}
+								else {
+									Font red = new Font("Verdana", Font.PLAIN, 18);
+									JLabel wrong = new JLabel("<html><font color = 'red'>The passwords don't match! Try Again.</color></html>");
+									wrong.setFont(red);
+									wrong.setBounds(800, 500, 400, 50);
+									forgotPassword.add(wrong);
+									forgotPassword.setVisible(false);
+									forgotPassword.setVisible(true);
+								}
 							}
 						});
 						
@@ -212,6 +210,15 @@ public class ForgotPassword {
 			}
 
 		});
+		
+	}
+	public static boolean test(JPasswordField f1, JPasswordField f2) {
+		if(f1.getText().equals(f2.getText())) {
+			return true;
+		}
+		else {
+			return false;
+		}
 		
 	}
 }
