@@ -1,7 +1,8 @@
 
 
+package MyCity;
+
 import java.awt.*;
-import java.text.Format;
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -24,17 +25,17 @@ public class Questionnaire {
 		
 		// Top JPanel
 		JPanel jpt = new JPanel();
-		jpt.setBackground(new Color(14, 170, 209));
+		jpt.setBackground(new Color(13,229,175));
 		jpt.setBounds(0,0,1920, 100);
 
 		// Bottom JPanel
-		GridLayout gl = new GridLayout(1920, 900);
+		GridLayout gl = new GridLayout(1400, 1, 0, 5);
 		gl.setVgap(10);
 		JPanel jp = new JPanel();
 		jp.setLayout(gl);
-		jp.setBackground(new Color(14, 170, 209));
+		jp.setBackground(new Color(13,229,175));
 		jp.setBounds(200, 100, 1000, 1000);
-
+	
 		// Title
 		JLabel title = new JLabel("Questionnaire");
 		title.setFont(new Font("Verdana", Font.PLAIN, 82));
@@ -50,7 +51,8 @@ public class Questionnaire {
 		sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		sp.setBounds(0, 100, 1920, 900);
 		sp.setBorder(border);
-		
+		sp.setAutoscrolls(true);
+        
 		// Displays
 		q.add(jpt);
 		q.getContentPane().add(sp);
@@ -60,41 +62,36 @@ public class Questionnaire {
 	
 	public static void Questions(Font font, Font font2, JPanel jp, GridLayout gl) {
 		// Q1
-		JLabel q1 = new JLabel("1) How long should you have to drive to the beach?", JLabel.CENTER );
-		q1.setBounds(0, 0, 900, 50);
+		JLabel q1 = new JLabel("1) What is your regional preference?");
+		q1.setSize(900,500);
 		q1.setFont(font);
-		JRadioButton q1o1 = new JRadioButton("Less than an hours drive");
-		JRadioButton q1o2 = new JRadioButton("2-5 Hours");
-		JRadioButton q1o3 = new JRadioButton("6-12 Hours, ROAD TRIP!");
-		JRadioButton q1o4 = new JRadioButton("A nice walk");
-		JRadioButton q1o5 = new JRadioButton("I don't like the beach");
-		JRadioButton q1o6 = new JRadioButton("I don't care");
+		JRadioButton q1o1 = new JRadioButton("Southeast");
+		JRadioButton q1o2 = new JRadioButton("Southwest");
+		JRadioButton q1o3 = new JRadioButton("Northeast");
+		JRadioButton q1o4 = new JRadioButton("Mid-West");
+		JRadioButton q1o5 = new JRadioButton("North West");
+		JRadioButton q1o6 = new JRadioButton("West");
 		
 		// Bounds and Format
-		q1o1.setBounds(100, 50, 400, 50);
-		q1o1.setHorizontalAlignment(SwingConstants.CENTER);
+		q1o1.setSize(400, 50);
 		q1o1.setFont(font2);
-		q1o2.setBounds(100, 100, 400, 50);
-		q1o2.setHorizontalAlignment(SwingConstants.CENTER);
+		q1o2.setSize(400, 50);
 		q1o2.setFont(font2);
-		q1o3.setBounds(100, 150, 400, 50);
-		q1o3.setHorizontalAlignment(SwingConstants.CENTER);
+		q1o3.setSize(400, 50);
 		q1o3.setFont(font2);
-		q1o4.setBounds(100, 200, 500, 50);
-		q1o4.setHorizontalAlignment(SwingConstants.CENTER);
+		q1o4.setSize(500, 50);
 		q1o4.setFont(font2);
-		q1o5.setBounds(100, 250, 400, 50);
-		q1o5.setHorizontalAlignment(SwingConstants.CENTER);
+		q1o5.setSize(400, 50);
 		q1o5.setFont(font2);
-		q1o6.setBounds(100, 300, 400, 50);
-		q1o6.setHorizontalAlignment(SwingConstants.CENTER);
+		q1o6.setSize(400, 50);
 		q1o6.setFont(font2);
-		q1o1.setBackground(new Color(14, 170, 209));
-		q1o2.setBackground(new Color(14, 170, 209));
-		q1o3.setBackground(new Color(14, 170, 209));
-		q1o4.setBackground(new Color(14, 170, 209));
-		q1o5.setBackground(new Color(14, 170, 209));
-		q1o6.setBackground(new Color(14, 170, 209));
+		q1o1.setBackground(new Color(13,229,175));
+		q1o2.setBackground(new Color(13,229,175));
+		q1o3.setBackground(new Color(13,229,175));
+		q1o4.setBackground(new Color(13,229,175));
+		q1o5.setBackground(new Color(13,229,175));
+		q1o6.setBackground(new Color(13,229,175));
+	
 		
 		// Add to frame
 		jp.add(q1);
@@ -115,15 +112,15 @@ public class Questionnaire {
 		bgq1.add(q1o6);
 		
 		// Q2
-		JLabel q2 = new JLabel("2) How often do you need to take flights?");
-		q2.setBounds(950, 0, 900, 50);
+		JLabel q2 = new JLabel("2) What is your preferred community level?");
+		q2.setSize(900, 500);
 		q2.setFont(font);
-		JRadioButton q2o1 = new JRadioButton("Once or twice a week");
-		JRadioButton q2o2 = new JRadioButton("At least every two weeks");
-		JRadioButton q2o3 = new JRadioButton("Monthly");
-		JRadioButton q2o4 = new JRadioButton("Couple times a year");
-		JRadioButton q2o5 = new JRadioButton("Maybe once a year, or every couple years");
-		JRadioButton q2o6 = new JRadioButton("Big metal bird? NOPE! I would never set foot on one");
+		JRadioButton q2o1 = new JRadioButton("Megacity(>10 million).");
+		JRadioButton q2o2 = new JRadioButton("Metropolis(1-3 million).");
+		JRadioButton q2o3 = new JRadioButton("Large City(<1 million but over 300,000).");
+		JRadioButton q2o4 = new JRadioButton("City(100,000-300,000).");
+		JRadioButton q2o5 = new JRadioButton("Large town(20,000-100,000).");
+		JRadioButton q2o6 = new JRadioButton("Town(1,000-20,000).");
 		
 		// Bounds and Format
 		q2o1.setBounds(1000, 50, 400, 50);
@@ -138,12 +135,12 @@ public class Questionnaire {
 		q2o5.setFont(font2);
 		q2o6.setBounds(1000, 300, 800, 50);
 		q2o6.setFont(font2);
-		q2o1.setBackground(new Color(14, 170, 209));
-		q2o2.setBackground(new Color(14, 170, 209));
-		q2o3.setBackground(new Color(14, 170, 209));
-		q2o4.setBackground(new Color(14, 170, 209));
-		q2o5.setBackground(new Color(14, 170, 209));
-		q2o6.setBackground(new Color(14, 170, 209));
+		q2o1.setBackground(new Color(13,229,175));
+		q2o2.setBackground(new Color(13,229,175));
+		q2o3.setBackground(new Color(13,229,175));
+		q2o4.setBackground(new Color(13,229,175));
+		q2o5.setBackground(new Color(13,229,175));
+		q2o6.setBackground(new Color(13,229,175));
 		
 		// Add to frame
 		jp.add(q2);
@@ -164,15 +161,15 @@ public class Questionnaire {
 		bgq2.add(q2o6);
 		
 		// Q3
-		JLabel q3 = new JLabel("3) How many people will be living with you?");
-		q3.setBounds(50, 400, 950, 50);
+		JLabel q3 = new JLabel("3) How close to a major city would you like to be?");
+		q3.setSize(900,500);
 		q3.setFont(font);
-		JRadioButton q3o1 = new JRadioButton("I live alone.");
-		JRadioButton q3o2 = new JRadioButton("I'm in a relationship, 2 people.");
-		JRadioButton q3o3 = new JRadioButton("I have kids, 3-8 people");
-		JRadioButton q3o4 = new JRadioButton("I'm an empty nester");
-		JRadioButton q3o5 = new JRadioButton("I have people crash on my couch a lot");
-		JRadioButton q3o6 = new JRadioButton("I have 17 cats, they are all my children.");
+		JRadioButton q3o1 = new JRadioButton("30 minutes(25 miles).");
+		JRadioButton q3o2 = new JRadioButton("Within an hour(50 miles).");
+		JRadioButton q3o3 = new JRadioButton("Within 2 hours(100 miles)");
+		JRadioButton q3o4 = new JRadioButton("Within 3 hours(150 miles)");
+		JRadioButton q3o5 = new JRadioButton("Within 4-8 hours(200-400 miles).");
+		JRadioButton q3o6 = new JRadioButton("I want to be far from a major city(days away).");
 		
 		// Bounds and Format
 		q3o1.setBounds(100, 450, 400, 50);
@@ -185,14 +182,14 @@ public class Questionnaire {
 		q3o4.setFont(font2);
 		q3o5.setBounds(100, 650, 600, 50);
 		q3o5.setFont(font2);
-		q3o6.setBounds(100, 1000, 800, 50);
+		q3o6.setBounds(100, 700, 800, 50);
 		q3o6.setFont(font2);
-		q3o1.setBackground(new Color(14, 170, 209));
-		q3o2.setBackground(new Color(14, 170, 209));
-		q3o3.setBackground(new Color(14, 170, 209));
-		q3o4.setBackground(new Color(14, 170, 209));
-		q3o5.setBackground(new Color(14, 170, 209));
-		q3o6.setBackground(new Color(14, 170, 209));
+		q3o1.setBackground(new Color(13,229,175));
+		q3o2.setBackground(new Color(13,229,175));
+		q3o3.setBackground(new Color(13,229,175));
+		q3o4.setBackground(new Color(13,229,175));
+		q3o5.setBackground(new Color(13,229,175));
+		q3o6.setBackground(new Color(13,229,175));
 		
 		// Add to frame
 		jp.add(q3);
@@ -210,6 +207,46 @@ public class Questionnaire {
 		bgq3.add(q3o3);
 		bgq3.add(q3o4);
 		bgq3.add(q3o5);
-		bgq3.add(q3o6);
+		bgq3.add(q3o6); 
+		
+		//Q4
+		JLabel q4 = new JLabel("4) What job industry do you currently work in or aspire to work in?");
+		q4.setBounds(100, 750, 900, 500);
+		q4.setFont(font);
+		JRadioButton q4o1 = new JRadioButton("Government.");
+		JRadioButton q4o2 = new JRadioButton("Technology.");
+		JRadioButton q4o3 = new JRadioButton("Manufacturing.");
+		JRadioButton q4o4 = new JRadioButton("Agriculture.");
+		JRadioButton q4o5 = new JRadioButton("Education.");
+		JRadioButton q4o6 = new JRadioButton("Finance.");
+		
+		// Bounds and Format
+		q4o1.setBounds(100, 800, 400, 50);
+		q4o1.setFont(font2);
+		q4o2.setBounds(100, 850, 400, 50);
+		q4o2.setFont(font2);
+		q4o3.setBounds(100, 900, 400, 50);
+		q4o3.setFont(font2);
+		q4o4.setBounds(100, 950, 500, 50);
+		q4o4.setFont(font2);
+		q4o5.setBounds(100, 1000, 600, 50);
+		q4o5.setFont(font2);
+		q4o6.setBounds(100, 1050, 800, 50);
+		q4o6.setFont(font2);
+		q4o1.setBackground(new Color(13,229,175));
+		q4o2.setBackground(new Color(13,229,175));
+		q4o3.setBackground(new Color(13,229,175));
+		q4o4.setBackground(new Color(13,229,175));
+		q4o5.setBackground(new Color(13,229,175));
+		q4o6.setBackground(new Color(13,229,175));
+		
+		// Add to frame
+		jp.add(q4);
+		jp.add(q4o1);
+		jp.add(q4o2);
+		jp.add(q4o3);
+		jp.add(q4o4);
+		jp.add(q4o5);
+		jp.add(q4o6);
 	}
 }
