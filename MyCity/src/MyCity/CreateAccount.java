@@ -8,6 +8,7 @@ import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.apache.commons.codec.binary.Hex;
 
@@ -19,24 +20,34 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.text.MaskFormatter;
 
-public class CreateAccount {
+public class CreateAccount implements ActionListener {
 	static String username = "";
 	static String password = "";
+	static String confirmPassword = "";
 	//static JTextField conPassField = new JTextField();
 	JTextField fNameField, mNameField, lNameField, addressField, emailField, usernameField, securityAField;
 	JPasswordField conPassField, conPassField2;
 	JComboBox questionList;
+	String myPassword;
 	static AccountInfoDB db;
 
 	public static void main(String[] args) {
-		//System.out.println("hello world");
-		 run();
-		// encrypt();
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					new CreateAccount();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
-	public static void run() {
+	public CreateAccount() {
 
 		// JFrame for create account screen
 		JFrame createAcc = new JFrame("Create New Account");
@@ -44,6 +55,7 @@ public class CreateAccount {
 		createAcc.setLayout(null);
 		createAcc.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		createAcc.getContentPane().setBackground(new Color(13, 229, 175));
+		createAcc.setResizable(true);
 
 		// title for create account screen
 		JLabel createAccTitle = new JLabel("Create New Account");
@@ -61,7 +73,7 @@ public class CreateAccount {
 		createAcc.add(FirstName);
 
 		// text box for first name
-		JTextField fNameField = new JTextField();
+		fNameField = new JTextField();
 		fNameField.setBounds(600, 190, 275, 30);
 		fNameField.setBackground(Color.WHITE);
 		fNameField.setVisible(true);
@@ -74,7 +86,7 @@ public class CreateAccount {
 		createAcc.add(middleName);
 
 		// text box for middle name
-		JTextField mNameField = new JTextField();
+		mNameField = new JTextField();
 		mNameField.setBounds(600, 265, 275, 30);
 		mNameField.setBackground(Color.WHITE);
 		mNameField.setVisible(true);
@@ -87,7 +99,7 @@ public class CreateAccount {
 		createAcc.add(LastName);
 
 		// text box for last name
-		JTextField lNameField = new JTextField();
+		lNameField = new JTextField();
 		lNameField.setBounds(600, 340, 275, 30);
 		lNameField.setBackground(Color.WHITE);
 		lNameField.setVisible(true);
@@ -100,7 +112,7 @@ public class CreateAccount {
 		createAcc.add(addressLabel);
 
 		// text box for address
-		JTextField addressField = new JTextField();
+		addressField = new JTextField();
 		addressField.setBounds(600, 415, 275, 30);
 		addressField.setBackground(Color.WHITE);
 		addressField.setVisible(true);
@@ -113,7 +125,7 @@ public class CreateAccount {
 		createAcc.add(emailLabel);
 
 		// text box for email
-		JTextField emailField = new JTextField();
+		emailField = new JTextField();
 		emailField.setBounds(600, 490, 275, 30);
 		emailField.setBackground(Color.WHITE);
 		emailField.setVisible(true);
@@ -126,7 +138,7 @@ public class CreateAccount {
 		createAcc.add(usernameLabel);
 
 		// text box for username
-		JTextField usernameField = new JTextField();
+		usernameField = new JTextField();
 		usernameField.setBounds(1050, 190, 275, 30);
 		usernameField.setBackground(Color.WHITE);
 		usernameField.setVisible(true);
@@ -139,7 +151,7 @@ public class CreateAccount {
 		createAcc.add(createPassLabel);
 
 		// create password text box
-		JPasswordField conPassField = new JPasswordField();
+		conPassField = new JPasswordField();
 		conPassField.setBounds(1050, 265, 275, 30);
 		conPassField.setBackground(Color.WHITE);
 		conPassField.setVisible(true);
@@ -152,7 +164,7 @@ public class CreateAccount {
 		createAcc.add(confirmPassLabel);
 
 		// confirm password text box
-		JPasswordField conPassField2 = new JPasswordField();
+		conPassField2 = new JPasswordField();
 		conPassField2.setBounds(1050, 340, 275, 30);
 		conPassField2.setBackground(Color.WHITE);
 		conPassField2.setVisible(true);
@@ -168,7 +180,7 @@ public class CreateAccount {
 		String[] questions = { "What is your pet's name?", "What is the name of your hometown?",
 				"What is your favorite sport?", "What is your mother's maiden name?", "What is your favorite beverage?",
 				"What is your favorite movie?" };
-		JComboBox questionList = new JComboBox(questions);
+		questionList = new JComboBox(questions);
 		questionList.setBounds(1050, 415, 275, 30);
 		questionList.setSelectedIndex(0);
 		questionList.setBackground(Color.WHITE);
@@ -181,7 +193,7 @@ public class CreateAccount {
 		createAcc.add(securityALabel);
 
 		// security answer text box
-		JTextField securityAField = new JTextField();
+		securityAField = new JTextField();
 		securityAField.setBounds(1050, 490, 275, 30);
 		securityAField.setBackground(Color.WHITE);
 		securityAField.setVisible(true);
@@ -203,6 +215,7 @@ public class CreateAccount {
 		createAccButton.setBorderPainted(false);
 		createAcc.add(createAccButton);
 		
+		createAccButton.addActionListener(this);
 		// jdbc object
 		try {
 			db = new AccountInfoDB();
@@ -217,46 +230,63 @@ public class CreateAccount {
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getActionCommand().equals("Create Account")) {
 			boolean access = true;
-			if (fNameField.getText() == null) {
+			char[] pass = conPassField.getPassword();
+			char[] conPass = conPassField2.getPassword();
+			
+			for (int i = 0; i < pass.length; i++) {
+				password += pass[i];
+				confirmPassword +=  conPass[i];
+			}
+			if (fNameField.getText().equals("")) {
 				JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
 				access = false;
 			}
-			else if (mNameField.getText() == null) {
+			else if (mNameField.getText().equals("")) {
 				JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
 				access = false;
 			}
-			else if (lNameField.getText() == null) {
+			else if (lNameField.getText().equals("")) {
 				JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
 				access = false;
 			}
-			else if (addressField.getText() == null) {
+			else if (addressField.getText().equals("")) {
 				JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
 				access = false;
 			}
-			else if (emailField.getText() == null) {
+			else if (emailField.getText().equals("")) {
 				JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
 				access = false;
 			}
-			else if (usernameField.getText() == null) {
+			else if (usernameField.getText().equals("")) {
 				JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
 				access = false;
 			}
-			else if (conPassField.getPassword() == null) {
+			else if (conPassField.getPassword().equals("")) {
 				JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
 				access = false;
 			}
-			else if (conPassField2.getPassword() == null) {
+			else if (conPassField2.getPassword().equals("")) {
 				JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
 				access = false;
 			}
 			
-			if (access) {
-				char[] pass = conPassField.getPassword();
-				
-				for (int i = 0; i < pass.length; i++) {
-					password += pass[i];
+			if (!(password.equals(confirmPassword))) {
+				JOptionPane.showMessageDialog(null, "Your passwords don't match. Please reenter your password.");
+				access = false;
+			}
+			
+			try {
+				if (isTaken()) {
+					JOptionPane.showMessageDialog(null, "Please enter information for all of the boxes.");
+					access = false;
 				}
-				encrypt();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if (access) {
+				myPassword = encrypt();
 				updateTable();
 			}
 		}
@@ -264,25 +294,27 @@ public class CreateAccount {
 	
 	public void updateTable() {
 		try {
-			db.createDBTable();
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		try {
 			db.insertRecord(fNameField.getText(), mNameField.getText(), lNameField.getText(), addressField.getText(), emailField.getText(), 
-					usernameField.getText(), password, questionList.getSelectedItem().toString(), securityAField.getText());
+					usernameField.getText(), myPassword, questionList.getSelectedItem().toString(), securityAField.getText());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	public void isTaken() {
+	public boolean isTaken() throws SQLException {
+		ArrayList<String> usernames = db.readRecord();
 		
+		for (int i = 0; i < usernames.size(); i++) {
+			if (usernames.get(i).equals(usernameField.getText())) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
-	public static void encrypt() {
+	
+	public static String encrypt() {
 		MessageDigest messageDigest;
 		try {
 			messageDigest = MessageDigest.getInstance("MD5");
@@ -291,7 +323,9 @@ public class CreateAccount {
 			byte[] resultByte = messageDigest.digest();
 			String result = new String(Hex.encodeHex(resultByte));
 			System.out.println(result);
+			return result;
 		} catch (NoSuchAlgorithmException e) {
 		}
+		return null;
 	}
 }
