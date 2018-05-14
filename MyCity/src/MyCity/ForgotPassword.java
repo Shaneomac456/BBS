@@ -1,24 +1,23 @@
 package MyCity;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
-import javax.swing.text.MaskFormatter;
+import javax.swing.JTextField;
 
 public class ForgotPassword {
-	public static void main(String[]args) {
-		
+	public static void main(String[] args) {
+
 		run();
 	}
-	
+
 	public static void run() {
 		
 		//Creating and Formatting JFrame for forgot password screen
@@ -41,17 +40,11 @@ public class ForgotPassword {
 		forgotPassword.add(username);
 				
 		//Username text box
-		try {
-			JFormattedTextField usernameField = new JFormattedTextField(new MaskFormatter("********************"));
-			usernameField.setBounds(750, 350, 400, 50);
-			usernameField.setBackground(Color.WHITE);
-			usernameField.setVisible(true);
-			forgotPassword.add(usernameField);
-		}
-		catch(Exception e) {
-			System.out.println("k");
-		}
-		
+		JTextField usernameField = new JTextField();
+		usernameField.setBounds(750, 350, 400, 50);
+		usernameField.setBackground(Color.WHITE);
+		usernameField.setVisible(true);
+		forgotPassword.add(usernameField);
 		//Email JLabel 
 		JLabel email = new JLabel("E-mail Address:");
 		email.setBounds(750, 400, 300, 100);
@@ -59,16 +52,11 @@ public class ForgotPassword {
 		forgotPassword.add(email);
 						
 		//Email text box
-		try {
-			JFormattedTextField emailField = new JFormattedTextField(new MaskFormatter("*****************************************"));
-			emailField.setBounds(750, 500, 400, 50);
-			emailField.setBackground(Color.WHITE);
-			emailField.setVisible(true);
-			forgotPassword.add(emailField);
-		}
-		catch(Exception e) {
-			System.out.println("k");
-		}
+		JTextField emailField = new JTextField();
+		emailField.setBounds(750, 500, 400, 50);
+		emailField.setBackground(Color.WHITE);
+		emailField.setVisible(true);
+		forgotPassword.add(emailField);
 		
 		//next button to continue to security questions
 		JButton nextButton = new JButton ("Next");
@@ -83,6 +71,8 @@ public class ForgotPassword {
 		//action listener to go to security question
 		nextButton.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
+				// Brady JDBC stuff
+				//if(username = username from email) {
 				forgotPassword.setVisible(false);
 				forgotPassword.getContentPane().removeAll();
 				
@@ -136,7 +126,6 @@ public class ForgotPassword {
 				nextButton2.setBounds(850, 700, 200, 75);
 				nextButton2.setBorderPainted(false);
 				forgotPassword.add(nextButton2);
-				
 				nextButton2.addActionListener(new ActionListener() {
 					public void actionPerformed (ActionEvent e) {
 						forgotPassword.setVisible(false);
@@ -205,20 +194,20 @@ public class ForgotPassword {
 						forgotPassword.setVisible(true);
 					}
 				});
+				}
+				});
 			
 				forgotPassword.setVisible(true);
 			}
 
-		});
-		
-	}
+
+
 	public static boolean test(JPasswordField f1, JPasswordField f2) {
-		if(f1.getText().equals(f2.getText())) {
+		if (f1.getText().equals(f2.getText())) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
-		
+
 	}
 }
