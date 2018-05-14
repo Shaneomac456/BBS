@@ -199,7 +199,7 @@ public class CreateAccount {
 		JButton createAccButton = new JButton("Create Account");
 		createAccButton.setFont(new Font("Verdana", Font.BOLD, 40));
 		createAccButton.setBackground(new Color(182, 239, 225));
-		createAccButton.setBounds(850, 700, 400, 75);
+		createAccButton.setBounds(600, 700, 400, 75);
 		createAccButton.setBorderPainted(false);
 		createAcc.add(createAccButton);
 		
