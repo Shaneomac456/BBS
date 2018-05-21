@@ -248,5 +248,202 @@ public class Questionnaire {
 		jp.add(q4o4);
 		jp.add(q4o5);
 		jp.add(q4o6);
+	//Question 5
+		JLabel q5 = new JLabel("5) What type of climate do you want to live in?");
+		q5.setSize(900,500);
+		q5.setFont(font);
+		JRadioButton q5o1 = new JRadioButton("Tropical climate.");
+		JRadioButton q5o2 = new JRadioButton("Desert climate.");
+		JRadioButton q5o3 = new JRadioButton("Semi-arid climate");
+		JRadioButton q5o4 = new JRadioButton("Mediterranean climate");
+		JRadioButton q5o5 = new JRadioButton("Subtropical climate");
+		JRadioButton q5o6 = new JRadioButton("Humid continental climate");
+		
+		// Bounds and Format for Q5
+		q5o1.setSize(400, 50);
+		q5o1.setFont(font2);
+		q5o2.setSize(400, 50);	
+		q5o2.setFont(font2);
+		q5o3.setSize(400, 50);
+		q5o3.setFont(font2);
+		q5o4.setSize(400, 50);
+		q5o4.setFont(font2);
+		q5o5.setSize(400, 50);
+		q5o5.setFont(font2);
+		q5o6.setSize(400, 50);
+		q5o6.setFont(font2);
+		q5o1.setBackground(new Color(13,229,175));
+		q5o2.setBackground(new Color(13,229,175));
+		q5o3.setBackground(new Color(13,229,175));
+		q5o4.setBackground(new Color(13,229,175));
+		q5o5.setBackground(new Color(13,229,175));
+		q5o6.setBackground(new Color(13,229,175));
+	
+		// Add to frame
+		jp.add(q5);
+		jp.add(q5o1);
+		jp.add(q5o2);
+		jp.add(q5o3);
+		jp.add(q5o4);
+		jp.add(q5o5);
+		jp.add(q5o6);
+	
+		// Button Group for Q5
+		ButtonGroup bgq5 = new ButtonGroup();
+		bgq5.add(q5o1);
+		bgq5.add(q5o2);
+		bgq5.add(q5o3);
+		bgq5.add(q5o4);
+		bgq5.add(q5o5);
+		bgq5.add(q5o6);
+		
+		//Question 6
+		JLabel q6 = new JLabel("6) How close do you want to be to the beach?");
+		q6.setSize(900,500);
+		q6.setFont(font);
+		JRadioButton q6o1 = new JRadioButton("Walking distance.");
+		JRadioButton q6o2 = new JRadioButton("10-30 minute drive.");
+		JRadioButton q6o3 = new JRadioButton("An hour drive.");
+		JRadioButton q6o4 = new JRadioButton("2-5 hour drive.");
+		JRadioButton q6o5 = new JRadioButton("A flight away.");
+		JRadioButton q6o6 = new JRadioButton("Nowhere close to one.");
+		
+		// Bounds and Format for Q6
+		q6o1.setSize(400, 50);
+		q6o1.setFont(font2);
+		q6o2.setSize(400, 50);	
+		q6o2.setFont(font2);
+		q6o3.setSize(400, 50);
+		q6o3.setFont(font2);
+		q6o4.setSize(400, 50);
+		q6o4.setFont(font2);
+		q6o5.setSize(400, 50);
+		q6o5.setFont(font2);
+		q6o6.setSize(400, 50);
+		q6o6.setFont(font2);
+		q6o1.setBackground(new Color(13,229,175));
+		q6o2.setBackground(new Color(13,229,175));
+		q6o3.setBackground(new Color(13,229,175));
+		q6o4.setBackground(new Color(13,229,175));
+		q6o5.setBackground(new Color(13,229,175));
+		q6o6.setBackground(new Color(13,229,175));
+			
+		// Add to frame
+		jp.add(q6);
+		jp.add(q6o1);
+		jp.add(q6o2);
+		jp.add(q6o3);
+		jp.add(q6o4);
+		jp.add(q6o5);
+		jp.add(q6o6);	
+				
+		// Button Group for Q6
+		ButtonGroup bgq6 = new ButtonGroup();
+		bgq6.add(q6o1);
+		bgq6.add(q6o2);
+		bgq6.add(q6o3);
+		bgq6.add(q6o4);
+		bgq6.add(q6o5);
+		bgq6.add(q6o6);
+		
+		//Question 7
+		JLabel q7 = new JLabel("7) How close to an airport would you like to be?");
+		q7.setSize(900,500);
+		q7.setFont(font);
+		JRadioButton q7o1 = new JRadioButton("Less than 10 minutes.");
+		JRadioButton q7o2 = new JRadioButton("Less than 30 minutes.");
+		JRadioButton q7o3 = new JRadioButton("An hour drive.");
+		JRadioButton q7o4 = new JRadioButton("2-3 hour drive.");
+		JRadioButton q7o5 = new JRadioButton("4+ hour drive.");
+		JRadioButton q7o6 = new JRadioButton("I don't travel so I don't need to be close at all.");
+				
+		// Bounds and Format for Q7
+		q7o1.setSize(400, 50);
+		q7o1.setFont(font2);
+		q7o2.setSize(400, 50);	
+		q7o2.setFont(font2);
+		q7o3.setSize(400, 50);
+		q7o3.setFont(font2);
+		q7o4.setSize(400, 50);
+		q7o4.setFont(font2);
+		q7o5.setSize(400, 50);
+		q7o5.setFont(font2);
+		q7o6.setSize(400, 50);
+		q7o6.setFont(font2);
+		q7o1.setBackground(new Color(13,229,175));
+		q7o2.setBackground(new Color(13,229,175));
+		q7o3.setBackground(new Color(13,229,175));
+		q7o4.setBackground(new Color(13,229,175));
+		q7o5.setBackground(new Color(13,229,175));
+		q7o6.setBackground(new Color(13,229,175));
+					
+		// Add to frame
+		jp.add(q7);
+		jp.add(q7o1);
+		jp.add(q7o2);
+		jp.add(q7o3);
+		jp.add(q7o4);
+		jp.add(q7o5);
+		jp.add(q7o6);	
+				
+		// Button Group for Q7
+		ButtonGroup bgq7 = new ButtonGroup();
+		bgq7.add(q7o1);
+		bgq7.add(q7o2);
+		bgq7.add(q7o3);
+		bgq7.add(q7o4);
+		bgq7.add(q7o5);
+		bgq7.add(q7o6);
+		
+		//Question 8
+		JLabel q8 = new JLabel("8) How close do you want to be to the beach?");
+		q8.setSize(900,500);
+		q8.setFont(font);
+		JRadioButton q8o1 = new JRadioButton("Walking distance.");
+		JRadioButton q8o2 = new JRadioButton("10-30 minute drive.");
+		JRadioButton q8o3 = new JRadioButton("An hour drive.");
+		JRadioButton q8o4 = new JRadioButton("2-5 hour drive.");
+		JRadioButton q8o5 = new JRadioButton("A flight away.");
+		JRadioButton q8o6 = new JRadioButton("Nowhere close to one.");
+				
+		// Bounds and Format for Q5
+		q8o1.setSize(400, 50);
+		q8o1.setFont(font2);
+		q8o2.setSize(400, 50);	
+		q8o2.setFont(font2);
+		q8o3.setSize(400, 50);
+		q8o3.setFont(font2);
+		q8o4.setSize(400, 50);
+		q8o4.setFont(font2);
+		q8o5.setSize(400, 50);
+		q8o5.setFont(font2);
+		q8o6.setSize(400, 50);
+		q8o6.setFont(font2);
+		q8o1.setBackground(new Color(13,229,175));
+		q8o2.setBackground(new Color(13,229,175));
+		q8o3.setBackground(new Color(13,229,175));
+		q8o4.setBackground(new Color(13,229,175));
+		q8o5.setBackground(new Color(13,229,175));
+		q8o6.setBackground(new Color(13,229,175));
+					
+		// Add to frame
+		jp.add(q8);
+		jp.add(q8o1);
+		jp.add(q8o2);
+		jp.add(q8o3);
+		jp.add(q8o4);
+		jp.add(q8o5);
+		jp.add(q8o6);	
+						
+		// Button Group for Q5
+		ButtonGroup bgq8 = new ButtonGroup();
+		bgq8.add(q8o1);
+		bgq8.add(q8o2);
+		bgq8.add(q8o3);
+		bgq8.add(q8o4);
+		bgq8.add(q8o5);
+		bgq8.add(q8o6);
 	}
 }
+
+
