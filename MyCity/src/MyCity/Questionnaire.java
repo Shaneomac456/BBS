@@ -1,5 +1,3 @@
-
-
 package MyCity;
 
 import java.awt.*;
@@ -29,7 +27,7 @@ public class Questionnaire {
 		jpt.setBounds(0,0,1920, 100);
 
 		// Bottom JPanel
-		GridLayout gl = new GridLayout(1400, 1, 0, 5);
+		GridLayout gl = new GridLayout(70, 1, 0, 5);
 		gl.setVgap(10);
 		JPanel jp = new JPanel();
 		jp.setLayout(gl);
@@ -61,7 +59,7 @@ public class Questionnaire {
 	}
 	
 	public static void Questions(Font font, Font font2, JPanel jp, GridLayout gl) {
-		// Q1
+		//Question 1
 		JLabel q1 = new JLabel("1) What is your regional preference?");
 		q1.setSize(900,500);
 		q1.setFont(font);
@@ -72,7 +70,7 @@ public class Questionnaire {
 		JRadioButton q1o5 = new JRadioButton("North West");
 		JRadioButton q1o6 = new JRadioButton("West");
 		
-		// Bounds and Format
+		// Bounds and Format for Q1
 		q1o1.setSize(400, 50);
 		q1o1.setFont(font2);
 		q1o2.setSize(400, 50);
@@ -102,7 +100,7 @@ public class Questionnaire {
 		jp.add(q1o5);
 		jp.add(q1o6);
 		
-		// Button Group
+		// Button Group for Q1
 		ButtonGroup bgq1 = new ButtonGroup();
 		bgq1.add(q1o1);
 		bgq1.add(q1o2);
@@ -111,7 +109,7 @@ public class Questionnaire {
 		bgq1.add(q1o5);
 		bgq1.add(q1o6);
 		
-		// Q2
+		//Question 2
 		JLabel q2 = new JLabel("2) What is your preferred community level?");
 		q2.setSize(900, 500);
 		q2.setFont(font);
@@ -122,18 +120,18 @@ public class Questionnaire {
 		JRadioButton q2o5 = new JRadioButton("Large town(20,000-100,000).");
 		JRadioButton q2o6 = new JRadioButton("Town(1,000-20,000).");
 		
-		// Bounds and Format
-		q2o1.setBounds(1000, 50, 400, 50);
+		// Bounds and Format for Q2
+		q2o1.setSize(400, 50);
 		q2o1.setFont(font2);
-		q2o2.setBounds(1000, 100, 400, 50);
+		q2o2.setSize(400, 50);
 		q2o2.setFont(font2);
-		q2o3.setBounds(1000, 150, 400, 50);
+		q2o3.setSize(400, 50);
 		q2o3.setFont(font2);
-		q2o4.setBounds(1000, 200, 500, 50);
+		q2o4.setSize(400, 50);
 		q2o4.setFont(font2);
-		q2o5.setBounds(1000, 250, 600, 50);
+		q2o5.setSize(400, 50);
 		q2o5.setFont(font2);
-		q2o6.setBounds(1000, 300, 800, 50);
+		q2o6.setSize(400, 50);
 		q2o6.setFont(font2);
 		q2o1.setBackground(new Color(13,229,175));
 		q2o2.setBackground(new Color(13,229,175));
@@ -151,7 +149,7 @@ public class Questionnaire {
 		jp.add(q2o5);
 		jp.add(q2o6);
 		
-		// Button Group
+		// Button Group for Q2
 		ButtonGroup bgq2 = new ButtonGroup();
 		bgq2.add(q2o1);
 		bgq2.add(q2o2);
@@ -160,7 +158,7 @@ public class Questionnaire {
 		bgq2.add(q2o5);
 		bgq2.add(q2o6);
 		
-		// Q3
+		// Question 3
 		JLabel q3 = new JLabel("3) How close to a major city would you like to be?");
 		q3.setSize(900,500);
 		q3.setFont(font);
@@ -171,18 +169,18 @@ public class Questionnaire {
 		JRadioButton q3o5 = new JRadioButton("Within 4-8 hours(200-400 miles).");
 		JRadioButton q3o6 = new JRadioButton("I want to be far from a major city(days away).");
 		
-		// Bounds and Format
-		q3o1.setBounds(100, 450, 400, 50);
+		// Bounds and Format for Q3
+		q3o1.setSize(400, 50);
 		q3o1.setFont(font2);
-		q3o2.setBounds(100, 500, 400, 50);
+		q3o2.setSize(400, 50);
 		q3o2.setFont(font2);
-		q3o3.setBounds(100, 550, 400, 50);
+		q3o3.setSize(400, 50);
 		q3o3.setFont(font2);
-		q3o4.setBounds(100, 600, 500, 50);
+		q3o4.setSize(400, 50);
 		q3o4.setFont(font2);
-		q3o5.setBounds(100, 650, 600, 50);
+		q3o5.setSize(400, 50);
 		q3o5.setFont(font2);
-		q3o6.setBounds(100, 700, 800, 50);
+		q3o6.setSize(400, 50);
 		q3o6.setFont(font2);
 		q3o1.setBackground(new Color(13,229,175));
 		q3o2.setBackground(new Color(13,229,175));
@@ -200,7 +198,7 @@ public class Questionnaire {
 		jp.add(q3o5);
 		jp.add(q3o6);
 		
-		// Button Group
+		// Button Group for Q3
 		ButtonGroup bgq3 = new ButtonGroup();
 		bgq3.add(q3o1);
 		bgq3.add(q3o2);
@@ -209,9 +207,9 @@ public class Questionnaire {
 		bgq3.add(q3o5);
 		bgq3.add(q3o6); 
 		
-		//Q4
+		//Question 4
 		JLabel q4 = new JLabel("4) What job industry do you currently work in or aspire to work in?");
-		q4.setBounds(100, 750, 900, 500);
+		q4.setSize(900,500);
 		q4.setFont(font);
 		JRadioButton q4o1 = new JRadioButton("Government.");
 		JRadioButton q4o2 = new JRadioButton("Technology.");
@@ -220,18 +218,18 @@ public class Questionnaire {
 		JRadioButton q4o5 = new JRadioButton("Education.");
 		JRadioButton q4o6 = new JRadioButton("Finance.");
 		
-		// Bounds and Format
-		q4o1.setBounds(100, 800, 400, 50);
+		// Bounds and Format for Q4
+		q4o1.setSize(400, 50);
 		q4o1.setFont(font2);
-		q4o2.setBounds(100, 850, 400, 50);
+		q4o2.setSize(400, 50);
 		q4o2.setFont(font2);
-		q4o3.setBounds(100, 900, 400, 50);
+		q4o3.setSize(400, 50);
 		q4o3.setFont(font2);
-		q4o4.setBounds(100, 950, 500, 50);
+		q4o4.setSize(400, 50);
 		q4o4.setFont(font2);
-		q4o5.setBounds(100, 1000, 600, 50);
+		q4o5.setSize(400, 50);
 		q4o5.setFont(font2);
-		q4o6.setBounds(100, 1050, 800, 50);
+		q4o6.setSize(400, 50);
 		q4o6.setFont(font2);
 		q4o1.setBackground(new Color(13,229,175));
 		q4o2.setBackground(new Color(13,229,175));
@@ -248,7 +246,17 @@ public class Questionnaire {
 		jp.add(q4o4);
 		jp.add(q4o5);
 		jp.add(q4o6);
-	//Question 5
+		
+		// Button Group for Q4
+		ButtonGroup bgq4 = new ButtonGroup();
+		bgq4.add(q4o1);
+		bgq4.add(q4o2);
+		bgq4.add(q4o3);
+		bgq4.add(q4o4);
+		bgq4.add(q4o5);
+		bgq4.add(q4o6); 
+		
+		//Question 5
 		JLabel q5 = new JLabel("5) What type of climate do you want to live in?");
 		q5.setSize(900,500);
 		q5.setFont(font);
@@ -406,7 +414,7 @@ public class Questionnaire {
 		JRadioButton q8o5 = new JRadioButton("A flight away.");
 		JRadioButton q8o6 = new JRadioButton("Nowhere close to one.");
 				
-		// Bounds and Format for Q5
+		// Bounds and Format for Q8
 		q8o1.setSize(400, 50);
 		q8o1.setFont(font2);
 		q8o2.setSize(400, 50);	
@@ -435,7 +443,7 @@ public class Questionnaire {
 		jp.add(q8o5);
 		jp.add(q8o6);	
 						
-		// Button Group for Q5
+		// Button Group for Q8
 		ButtonGroup bgq8 = new ButtonGroup();
 		bgq8.add(q8o1);
 		bgq8.add(q8o2);
@@ -443,7 +451,106 @@ public class Questionnaire {
 		bgq8.add(q8o4);
 		bgq8.add(q8o5);
 		bgq8.add(q8o6);
+		
+		//Question 9
+		JLabel q9 = new JLabel("9) What natural disaster poses the least risk to you?");
+		q9.setSize(900,500);
+		q9.setFont(font);
+		JRadioButton q9o1 = new JRadioButton("Hurricane.");
+		JRadioButton q9o2 = new JRadioButton("Tornado.");
+		JRadioButton q9o3 = new JRadioButton("Earthquake.");
+		JRadioButton q9o4 = new JRadioButton("Blizzard.");
+		JRadioButton q9o5 = new JRadioButton("Mudslide.");
+		JRadioButton q9o6 = new JRadioButton("Wildfires.");
+				
+		// Bounds and Format for Q9
+		q9o1.setSize(400, 50);
+		q9o1.setFont(font2);
+		q9o2.setSize(400, 50);	
+		q9o2.setFont(font2);
+		q9o3.setSize(400, 50);
+		q9o3.setFont(font2);
+		q9o4.setSize(400, 50);
+		q9o4.setFont(font2);
+		q9o5.setSize(400, 50);
+		q9o5.setFont(font2);
+		q9o6.setSize(400, 50);
+		q9o6.setFont(font2);
+		q9o1.setBackground(new Color(13,229,175));
+		q9o2.setBackground(new Color(13,229,175));
+		q9o3.setBackground(new Color(13,229,175));
+		q9o4.setBackground(new Color(13,229,175));
+		q9o5.setBackground(new Color(13,229,175));
+		q9o6.setBackground(new Color(13,229,175));
+					
+		// Add to frame
+		jp.add(q9);
+		jp.add(q9o1);
+		jp.add(q9o2);
+		jp.add(q9o3);
+		jp.add(q9o4);
+		jp.add(q9o5);
+		jp.add(q9o6);	
+						
+		// Button Group for Q9
+		ButtonGroup bgq9 = new ButtonGroup();
+		bgq9.add(q9o1);
+		bgq9.add(q9o2);
+		bgq9.add(q9o3);
+		bgq9.add(q9o4);
+		bgq9.add(q9o5);
+		bgq9.add(q9o6);
+		
+		//Question 10
+		JLabel q10 = new JLabel("10) What is your favorite type of cuisine?");
+		q10.setSize(900,600);
+		q10.setFont(font);
+		JRadioButton q10o1 = new JRadioButton("American cuisine.");
+		JRadioButton q10o2 = new JRadioButton("Italian cuisine.");
+		JRadioButton q10o3 = new JRadioButton("Hispanic cuisine (Mexican, Spanish, Cuban, Puerto Rican).");
+		JRadioButton q10o4 = new JRadioButton("European cuisine (French, British, Irish, German).");
+		JRadioButton q10o5 = new JRadioButton("Asian cuisine (Thai, Korean, Chinese, Japanese, Vietnamese, Indian) .");
+		JRadioButton q10o6 = new JRadioButton("Soul food.");
+				
+		// Bounds and Format for Q10
+		q10o1.setSize(400, 50);
+		q10o1.setFont(font2);
+		q10o2.setSize(400, 50);	
+		q10o2.setFont(font2);
+		q10o3.setSize(400, 50);
+		q10o3.setFont(font2);
+		q10o4.setSize(400, 50);
+		q10o4.setFont(font2);
+		q10o5.setSize(400, 50);
+		q10o5.setFont(font2);
+		q10o6.setSize(400, 50);
+		q10o6.setFont(font2);
+		q10o1.setBackground(new Color(13,229,175));
+		q10o2.setBackground(new Color(13,229,175));
+		q10o3.setBackground(new Color(13,229,175));
+		q10o4.setBackground(new Color(13,229,175));
+		q10o5.setBackground(new Color(13,229,175));
+		q10o6.setBackground(new Color(13,229,175));
+					
+		// Add to frame
+		jp.add(q10);
+		jp.add(q10o1);
+		jp.add(q10o2);
+		jp.add(q10o3);
+		jp.add(q10o4);
+		jp.add(q10o5);
+		jp.add(q10o6);	
+						
+		// Button Group for Q10
+		ButtonGroup bgq10 = new ButtonGroup();
+		bgq10.add(q10o1);
+		bgq10.add(q10o2);
+		bgq10.add(q10o3);
+		bgq10.add(q10o4);
+		bgq10.add(q10o5);
+		bgq10.add(q10o6);
 	}
 }
+
 
 
