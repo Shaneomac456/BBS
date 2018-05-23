@@ -1,5 +1,13 @@
 package MyCity;
 
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.web.WebView;
+
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import javax.swing.*;
@@ -7,29 +15,40 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class MapScreen {
 	static Font font = new Font("Verdana", Font.PLAIN, 20);
+	static String[] opt = {"Chicago+IL", "Hampton+VA", "Atlanta+GA", "Boston+MA", "Brooklyn+NY", "Seattle+WA", "Houston+TX", "Marathon+FL", "Ann Arbor+MI", "Los Angeles+CA"};
 	static String place = "";
-	static String[] opt = {"Chicago+IL", "Hampton+VA", "Atlanta+GA", "Boston+MA", "Brooklyn+NY", "Seattle+WA", "Houston+TX", "Marathon+FL", "Hell+MI", "Los Angeles+CA"};
-	public static void main(String[] args) {
+	public static void main(String[] args) {	
 		run(opt);
 	}
 
 	public static void run(String[] opt) {
 
 		// Build the Browser Frame
+		JFXPanel jfxPanel = new JFXPanel();
+
+		Platform.runLater(() -> {
+		    WebView webView = new WebView();
+			jfxPanel.setScene(new Scene(webView));
+		    webView.getEngine().load("https://www.google.com/maps/place/" + place);
+		});
+		
+		
+		
 		JFrame bframe = new JFrame("JxBrowser Google Maps");
 		JPanel jp = new JPanel(new BorderLayout());
 		bframe.setVisible(false);                                                             
-		Browser browser = new Browser();
-		BrowserView view = new BrowserView(browser);
+		//Browser browser = new Browser();
+		//BrowserView view = new BrowserView(browser);
 		bframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		view.setSize(1500, 1080);
-		jp.add(view, BorderLayout.CENTER);
+		//view.setSize(1500, 1080);
+		jp.add(jfxPanel, BorderLayout.CENTER);
 		bframe.add(jp);
 		bframe.setVisible(true);
 		bframe.setBounds(-8, 0, 1940, 1080);
-		browser.loadURL("https://www.google.com/maps/place/" + place);
+		//browser.loadURL("https://www.google.com/maps/place/" + place);
 
 		
 		// JFrame 2 Format
@@ -40,6 +59,7 @@ public class MapScreen {
 		
 		
 		bframe.add(jf2, BorderLayout.LINE_END);
+		bframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		// Call options
 		options(opt, bframe, jf2);
 	}
@@ -144,7 +164,7 @@ public class MapScreen {
 		o1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[0];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
@@ -153,7 +173,7 @@ public class MapScreen {
 		o2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[1];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
@@ -162,7 +182,7 @@ public class MapScreen {
 		o3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[2];
-				bframe.dispose();
+				bframe.setVisible(false);;
 				run(options);
 			}
 		});
@@ -171,7 +191,7 @@ public class MapScreen {
 		o4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[3];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
@@ -180,7 +200,7 @@ public class MapScreen {
 		o5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[4];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
@@ -189,7 +209,7 @@ public class MapScreen {
 		o6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[5];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
@@ -198,7 +218,7 @@ public class MapScreen {
 		o7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[6];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
@@ -207,7 +227,7 @@ public class MapScreen {
 		o8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[7];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
@@ -216,7 +236,7 @@ public class MapScreen {
 		o9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[8];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
@@ -225,7 +245,7 @@ public class MapScreen {
 		o10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				place = options[9];
-				bframe.dispose();
+				bframe.setVisible(false);
 				run(options);
 			}
 		});
