@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
 public class Login {
@@ -41,17 +43,12 @@ public class Login {
 		loginScreen.add(username);
 		
 		//Username text box
-		try {
-			JFormattedTextField usernameField = new JFormattedTextField(new MaskFormatter("********************"));
-			usernameField.setBounds(800, 175, 400, 50);
-			usernameField.setBackground(Color.WHITE);
-			usernameField.setVisible(true);
-			loginScreen.add(usernameField);
-		}
-		catch(Exception e) {
-			System.out.println("k");
-		}
-		
+		JTextField usernameField = new JTextField();
+		usernameField.setBounds(800, 175, 400, 50);
+		usernameField.setBackground(Color.WHITE);
+		usernameField.setVisible(true);
+		loginScreen.add(usernameField);
+	
 		//Password JLabel
 		JLabel password = new JLabel("Password:");
 		password.setBounds(625, 300, 200, 100);
@@ -59,16 +56,11 @@ public class Login {
 		loginScreen.add(password);
 		
 		//Password test box
-		try {
-			JFormattedTextField passwordField = new JFormattedTextField(new MaskFormatter("********************"));
-			passwordField.setBounds(800, 325, 400, 50);
-			passwordField.setBackground(Color.WHITE);
-			passwordField.setVisible(true);
-			loginScreen.add(passwordField);
-			}
-			catch(Exception e) {
-				System.out.println("k");
-			}
+		JPasswordField passwordField =  new JPasswordField();
+		passwordField.setBounds(800, 325, 400, 50);
+		passwordField.setBackground(Color.WHITE);
+		passwordField.setVisible(true);
+		loginScreen.add(passwordField);
 		
 		//forgot password button
 		JButton forgotP = new JButton("<html><u>Forgot Password?</u><html>");
@@ -113,6 +105,14 @@ public class Login {
 		login.setBorderPainted(false);
 		loginScreen.add(login);
 		
+		//action listener for login button
+		login.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				HomeScreen.run();
+				loginScreen.dispose();
+			}
+		});
+		
 		//continue as a guest button
 		JButton guest = new JButton("<html><u>Continue as Guest</u><html>");
 		guest.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -121,6 +121,15 @@ public class Login {
 		guest.setContentAreaFilled(false);
 		guest.setBorderPainted(false);
 		loginScreen.add(guest);
+		
+		//action listener for guest button
+		guest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				HomeScreen.run();
+				loginScreen.dispose();
+			}
+		});
+		
 		
 		loginScreen.setVisible(true);
 	}
