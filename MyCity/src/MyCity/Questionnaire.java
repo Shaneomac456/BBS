@@ -3,7 +3,6 @@ package MyCity;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -565,7 +564,7 @@ public class Questionnaire {
 		//action listener for submit button that'll take you to your results
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jp.setVisible(false);
+				
 				boolean missed = false;
 				
 				// Determine the String
@@ -795,7 +794,8 @@ public class Questionnaire {
 				Results.run();
 				}
 				else {
-					System.out.println("YOU MISSED ONE BRUH");
+					JOptionPane.showConfirmDialog(null, "You haven't answered all of the questions!", "WAIT!",  JOptionPane.OK_CANCEL_OPTION,  JOptionPane.WARNING_MESSAGE);
+					
 				}
 			}
 		});
