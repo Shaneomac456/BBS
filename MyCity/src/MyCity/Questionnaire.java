@@ -3,6 +3,7 @@ package MyCity;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -43,7 +44,7 @@ public class Questionnaire {
 		jpt.add(title);
 
 		// Questions
-		Questions(font, font2, jp, gl);
+		Questions(font, font2, jp, gl,f);
 		
 
 		// JPanel scrollable
@@ -61,7 +62,7 @@ public class Questionnaire {
 		
 	}
 	
-	public static void Questions(Font font, Font font2, JPanel jp, GridLayout gl) {
+	public static void Questions(Font font, Font font2, JPanel jp, GridLayout gl, JFrame f) {
 		//Question 1
 		JLabel q1 = new JLabel("1) What is your regional preference?");
 		q1.setSize(900,500);
@@ -565,7 +566,237 @@ public class Questionnaire {
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jp.setVisible(false);
+				boolean missed = false;
+				
+				// Determine the String
+				String result = "";
+				if (q1o1.isSelected()) {
+					result += "A";
+				}
+				else if(q1o2.isSelected()) {
+					result += "B";
+				}
+				else if(q1o3.isSelected()) {
+					result += "C";
+				}
+				else if(q1o4.isSelected()) {
+					result += "D";
+				}
+				else if(q1o5.isSelected()) {
+					result += "E";
+				}
+				else if(q1o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q2o1.isSelected()) {
+					result += "A";
+				}
+				else if(q2o2.isSelected()) {
+					result += "B";
+				}
+				else if(q2o3.isSelected()) {
+					result += "C";
+				}
+				else if(q2o4.isSelected()) {
+					result += "D";
+				}
+				else if(q2o5.isSelected()) {
+					result += "E";
+				}
+				else if(q2o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q3o1.isSelected()) {
+					result += "A";
+				}
+				else if(q3o2.isSelected()) {
+					result += "B";
+				}
+				else if(q3o3.isSelected()) {
+					result += "C";
+				}
+				else if(q3o4.isSelected()) {
+					result += "D";
+				}
+				else if(q3o5.isSelected()) {
+					result += "E";
+				}
+				else if(q3o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q4o1.isSelected()) {
+					result += "A";
+				}
+				else if(q4o2.isSelected()) {
+					result += "B";
+				}
+				else if(q4o3.isSelected()) {
+					result += "C";
+				}
+				else if(q4o4.isSelected()) {
+					result += "D";
+				}
+				else if(q4o5.isSelected()) {
+					result += "E";
+				}
+				else if(q4o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q5o1.isSelected()) {
+					result += "A";
+				}
+				else if(q5o2.isSelected()) {
+					result += "B";
+				}
+				else if(q5o3.isSelected()) {
+					result += "C";
+				}
+				else if(q5o4.isSelected()) {
+					result += "D";
+				}
+				else if(q5o5.isSelected()) {
+					result += "E";
+				}
+				else if(q5o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q6o1.isSelected()) {
+					result += "A";
+				}
+				else if(q6o2.isSelected()) {
+					result += "B";
+				}
+				else if(q6o3.isSelected()) {
+					result += "C";
+				}
+				else if(q6o4.isSelected()) {
+					result += "D";
+				}
+				else if(q6o5.isSelected()) {
+					result += "E";
+				}
+				else if(q6o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q7o1.isSelected()) {
+					result += "A";
+				}
+				else if(q7o2.isSelected()) {
+					result += "B";
+				}
+				else if(q7o3.isSelected()) {
+					result += "C";
+				}
+				else if(q7o4.isSelected()) {
+					result += "D";
+				}
+				else if(q7o5.isSelected()) {
+					result += "E";
+				}
+				else if(q7o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q8o1.isSelected()) {
+					result += "A";
+				}
+				else if(q8o2.isSelected()) {
+					result += "B";
+				}
+				else if(q8o3.isSelected()) {
+					result += "C";
+				}
+				else if(q8o4.isSelected()) {
+					result += "D";
+				}
+				else if(q8o5.isSelected()) {
+					result += "E";
+				}
+				else if(q8o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q9o1.isSelected()) {
+					result += "A";
+				}
+				else if(q9o2.isSelected()) {
+					result += "B";
+				}
+				else if(q9o3.isSelected()) {
+					result += "C";
+				}
+				else if(q9o4.isSelected()) {
+					result += "D";
+				}
+				else if(q9o5.isSelected()) {
+					result += "E";
+				}
+				else if(q9o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+					
+				}
+				if (q10o1.isSelected()) {
+					result += "A";
+				}
+				else if(q10o2.isSelected()) {
+					result += "B";
+				}
+				else if(q10o3.isSelected()) {
+					result += "C";
+				}
+				else if(q10o4.isSelected()) {
+					result += "D";
+				}
+				else if(q10o5.isSelected()) {
+					result += "E";
+				}
+				else if(q10o6.isSelected()) {
+					result += "F";
+				}
+				else {
+					missed = true;
+				}
+				System.out.println(result);
+				if (!missed) {
+				f.setVisible(false);
 				Results.run();
+				}
+				else {
+					System.out.println("YOU MISSED ONE BRUH");
+				}
 			}
 		});
 	}
