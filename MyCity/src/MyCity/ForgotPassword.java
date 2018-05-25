@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -45,6 +44,7 @@ public class ForgotPassword {
 		usernameField.setBackground(Color.WHITE);
 		usernameField.setVisible(true);
 		forgotPassword.add(usernameField);
+		
 		//Email JLabel 
 		JLabel email = new JLabel("E-mail Address:");
 		email.setBounds(750, 400, 300, 100);
@@ -71,7 +71,7 @@ public class ForgotPassword {
 		//action listener to go to security question
 		nextButton.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
-				// Brady JDBC stuff
+		
 				//if(username = username from email) {
 				forgotPassword.setVisible(false);
 				forgotPassword.getContentPane().removeAll();
@@ -98,6 +98,7 @@ public class ForgotPassword {
 				JComboBox questionList = new JComboBox(questions);
 				questionList.setBounds(800, 350, 300, 50);
 				questionList.setSelectedIndex(0);
+				forgotPassword.setVisible(true);
 				questionList.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						questionList.setSelectedIndex(questionList.getSelectedIndex());
@@ -175,7 +176,7 @@ public class ForgotPassword {
 						resetPass.addActionListener(new ActionListener() {
 							public void actionPerformed (ActionEvent e) {
 								if(test(confirmPassField, newPassField)) {
-									CreateAccount.encrypt(newPassField.getText());
+									//CreateAccount.encrypt(newPassField.getText());
 									forgotPassword.setVisible(false);
 									Login.run();
 								}
