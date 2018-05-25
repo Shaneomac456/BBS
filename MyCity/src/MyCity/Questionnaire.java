@@ -549,6 +549,22 @@ public class Questionnaire {
 		bgq10.add(q10o4);
 		bgq10.add(q10o5);
 		bgq10.add(q10o6);
+		
+		//submit answers button
+		JButton submit = new JButton("Submit Answers");
+		submit.setFont(new Font("Verdana", Font.BOLD, 40));
+		submit.setBackground(new Color(182,239,225));
+		submit.setSize(100, 75);
+		submit.setBorderPainted(false);
+		jp.add(submit);
+		
+		//action listener for submit button that'll take you to your results
+		submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jp.setVisible(false);
+				Results.run();
+			}
+		});
 	}
 }
 
