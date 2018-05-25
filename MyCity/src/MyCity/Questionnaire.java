@@ -1,6 +1,9 @@
 package MyCity;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -16,10 +19,10 @@ public class Questionnaire {
 		Font font2 = new Font("Verdana", Font.PLAIN, 24);
 		
 		// Create the frame
-		JFrame q = new JFrame("Questionnaire");
-		q.setLayout(null);
-		q.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		q.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		JFrame f = new JFrame("Questionnaire");
+		f.setLayout(null);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		// Top JPanel
 		JPanel jpt = new JPanel();
@@ -27,7 +30,7 @@ public class Questionnaire {
 		jpt.setBounds(0,0,1920, 100);
 
 		// Bottom JPanel
-		GridLayout gl = new GridLayout(70, 1, 0, 5);
+		GridLayout gl = new GridLayout(72, 1, 0, 5);
 		gl.setVgap(10);
 		JPanel jp = new JPanel();
 		jp.setLayout(gl);
@@ -42,6 +45,7 @@ public class Questionnaire {
 
 		// Questions
 		Questions(font, font2, jp, gl);
+		
 
 		// JPanel scrollable
 		Border border = BorderFactory.createLineBorder(Color.BLACK);
@@ -52,10 +56,10 @@ public class Questionnaire {
 		sp.setAutoscrolls(true);
         
 		// Displays
-		q.add(jpt);
-		q.getContentPane().add(sp);
-		q.setVisible(true);
-
+		f.add(jpt);
+		f.getContentPane().add(sp);
+		f.setVisible(true);
+		
 	}
 	
 	public static void Questions(Font font, Font font2, JPanel jp, GridLayout gl) {
@@ -567,6 +571,3 @@ public class Questionnaire {
 		});
 	}
 }
-
-
-
