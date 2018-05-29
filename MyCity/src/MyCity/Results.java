@@ -2,6 +2,9 @@ package MyCity;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -122,6 +125,17 @@ static String city10;
 		viewMap.setBounds(500, 800, 500, 75);
 		viewMap.setBorderPainted(false);
 		results.add(viewMap);
+		
+		
+		// viewMap Event Listener
+		viewMap.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String[] opt = {city1S, city2S, city3S, city4S, city5S, city6S, city7S, city8S, city9S, city10S};
+				MapScreen.run(opt);
+			}
+		});
+		
+		
 		
 		//button to view results on map screen
 		JButton save = new JButton ("Save Results");
