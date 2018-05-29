@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
+
 import org.apache.commons.codec.binary.Hex;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -17,6 +19,8 @@ import javax.swing.JTextField;
 
 
 public class CreateAccount {
+	static AccountInfoDB db;
+	static String result;
 	static String username = "";
 	static String password = "";
 	static  JTextField conPassField = new JTextField();
@@ -211,6 +215,14 @@ public class CreateAccount {
 			public void actionPerformed(ActionEvent e) {
 			password = conPassField.getText();
 			encrypt();
+			try {
+				db.insertAccountRecord(fNameField.getText(), mNameField.getText(), lNameField.getText(), addressField.getText(), emailField.getText(), 
+							usernameField.getText(), result, questionList.getSelectedItem().toString(), securityAField.getText());
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			Login.currentUsername = usernameField.getText();
 			}
 		});
 		createAcc.add(createAccButton);
@@ -223,6 +235,13 @@ public class CreateAccount {
 			}
 		});
 		
+		try {
+			db = new AccountInfoDB();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		createAcc.setVisible(true);
 	}
 
@@ -233,7 +252,7 @@ public class CreateAccount {
 			messageDigest.reset();
 			messageDigest.update(password.getBytes(Charset.forName("UTF8")));
 			byte[] resultByte = messageDigest.digest();
-			String result = new String(Hex.encodeHex(resultByte));
+			result = new String(Hex.encodeHex(resultByte));
 			System.out.println(result);
 		} catch (NoSuchAlgorithmException e) {
 		}
