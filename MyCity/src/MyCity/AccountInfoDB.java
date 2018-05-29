@@ -30,9 +30,11 @@ public class AccountInfoDB {
 	}
 	
 	public static void createAccountDBTable(Statement stmt) throws SQLException {
+		String createDb = "create database MyCity";
 		String createTable = "create table Account_Info (First_Name varchar(30), Middled_Name varchar(30), Last_Name varchar(30), "
 				+ "Address varchar(70), Email varchar(50), Username varchar(30) primary key, Password varchar(80), "
 				+ "Security_Question varchar(100), Security_Answer varchar(100))";
+		stmt.executeUpdate(createDb);
 		stmt.executeUpdate(createTable);
 		System.out.println("Table has been created");
 	}
