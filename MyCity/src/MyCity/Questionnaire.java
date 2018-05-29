@@ -411,11 +411,11 @@ public class Questionnaire {
 		JLabel q8 = new JLabel("8) What activity do you enjoy most?");
 		q8.setSize(900,500);
 		q8.setFont(font);
-		JRadioButton q8o1 = new JRadioButton("Hiking.");
+		JRadioButton q8o1 = new JRadioButton("Outdoor activities (hiking, parks).");
 		JRadioButton q8o2 = new JRadioButton("Snow sports.");
 		JRadioButton q8o3 = new JRadioButton("Shopping.");
 		JRadioButton q8o4 = new JRadioButton("Water sports.");
-		JRadioButton q8o5 = new JRadioButton("Football games.");
+		JRadioButton q8o5 = new JRadioButton("Museums and aquariums.");
 		JRadioButton q8o6 = new JRadioButton("Amusement Parks.");
 				
 		// Bounds and Format for Q8
