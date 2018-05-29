@@ -408,15 +408,15 @@ public class Questionnaire {
 		bgq7.add(q7o6);
 		
 		//Question 8
-		JLabel q8 = new JLabel("8) How close do you want to be to the beach?");
+		JLabel q8 = new JLabel("8) What activity do you enjoy most?");
 		q8.setSize(900,500);
 		q8.setFont(font);
-		JRadioButton q8o1 = new JRadioButton("Walking distance.");
-		JRadioButton q8o2 = new JRadioButton("10-30 minute drive.");
-		JRadioButton q8o3 = new JRadioButton("An hour drive.");
-		JRadioButton q8o4 = new JRadioButton("2-5 hour drive.");
-		JRadioButton q8o5 = new JRadioButton("A flight away.");
-		JRadioButton q8o6 = new JRadioButton("Nowhere close to one.");
+		JRadioButton q8o1 = new JRadioButton("Hiking.");
+		JRadioButton q8o2 = new JRadioButton("Snow sports.");
+		JRadioButton q8o3 = new JRadioButton("Shopping.");
+		JRadioButton q8o4 = new JRadioButton("Water sports.");
+		JRadioButton q8o5 = new JRadioButton("Football games.");
+		JRadioButton q8o6 = new JRadioButton("Amusement Parks.");
 				
 		// Bounds and Format for Q8
 		q8o1.setSize(400, 50);
