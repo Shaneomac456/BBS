@@ -218,7 +218,7 @@ public class Questionnaire {
 		JRadioButton q4o1 = new JRadioButton("Government.");
 		JRadioButton q4o2 = new JRadioButton("Technology.");
 		JRadioButton q4o3 = new JRadioButton("Manufacturing.");
-		JRadioButton q4o4 = new JRadioButton("Agriculture.");
+		JRadioButton q4o4 = new JRadioButton("Healthcare.");
 		JRadioButton q4o5 = new JRadioButton("Education.");
 		JRadioButton q4o6 = new JRadioButton("Finance.");
 		
