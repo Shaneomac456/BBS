@@ -166,12 +166,12 @@ public class Questionnaire {
 		JLabel q3 = new JLabel("3) How close to a major city would you like to be?");
 		q3.setSize(900,500);
 		q3.setFont(font);
-		JRadioButton q3o1 = new JRadioButton("30 minutes(25 miles).");
-		JRadioButton q3o2 = new JRadioButton("Within an hour(50 miles).");
-		JRadioButton q3o3 = new JRadioButton("Within 2 hours(100 miles)");
-		JRadioButton q3o4 = new JRadioButton("Within 3 hours(150 miles)");
-		JRadioButton q3o5 = new JRadioButton("Within 4-8 hours(200-400 miles).");
-		JRadioButton q3o6 = new JRadioButton("I want to be far from a major city(days away).");
+		JRadioButton q3o1 = new JRadioButton("I want to be in the city.");
+		JRadioButton q3o2 = new JRadioButton("30 minutes(25 miles).");
+		JRadioButton q3o3 = new JRadioButton("Within an hour(50 miles).");
+		JRadioButton q3o4 = new JRadioButton("Within 2 hours(100 miles)");
+		JRadioButton q3o5 = new JRadioButton("Within 3 hours(150 miles)");
+		JRadioButton q3o6 = new JRadioButton("Within 4-8 hours(200-400 miles).");
 		
 		// Bounds and Format for Q3
 		q3o1.setSize(400, 50);
