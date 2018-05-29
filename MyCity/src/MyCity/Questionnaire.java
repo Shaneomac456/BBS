@@ -49,6 +49,7 @@ public class Questionnaire {
 		// JPanel scrollable
 		Border border = BorderFactory.createLineBorder(Color.BLACK);
 		JScrollPane sp = new JScrollPane(jp);
+		sp.getVerticalScrollBar().setUnitIncrement(16);
 		sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		sp.setBounds(0, 100, 1920, 900);
 		sp.setBorder(border);
