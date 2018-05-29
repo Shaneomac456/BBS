@@ -8,8 +8,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 
-import com.teamdev.jxbrowser.chromium.Browser;
-import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -40,15 +38,11 @@ public class MapScreen {
 		JFrame bframe = new JFrame("JxBrowser Google Maps");
 		JPanel jp = new JPanel(new BorderLayout());
 		bframe.setVisible(false);                                                             
-		//Browser browser = new Browser();
-		//BrowserView view = new BrowserView(browser);
 		bframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-		//view.setSize(1500, 1080);
 		jp.add(jfxPanel, BorderLayout.CENTER);
 		bframe.add(jp);
 		bframe.setVisible(true);
 		bframe.setBounds(-8, 0, 1940, 1080);
-		//browser.loadURL("https://www.google.com/maps/place/" + place);
 
 		
 		// JFrame 2 Format
