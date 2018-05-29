@@ -147,5 +147,10 @@ static String city10;
 		
 		
 		results.setVisible(true);
+		
+	}
+		public static String[] sort(String result) {
+		String[] opt = new String[10];
+		return opt;
 	}
 }
