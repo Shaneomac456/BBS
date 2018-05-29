@@ -42,7 +42,7 @@ public class MapScreen {
 		bframe.setVisible(false);                                                             
 		//Browser browser = new Browser();
 		//BrowserView view = new BrowserView(browser);
-		bframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		bframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		//view.setSize(1500, 1080);
 		jp.add(jfxPanel, BorderLayout.CENTER);
 		bframe.add(jp);
