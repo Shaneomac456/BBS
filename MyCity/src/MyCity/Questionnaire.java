@@ -269,7 +269,7 @@ public class Questionnaire {
 		JRadioButton q5o3 = new JRadioButton("Semi-arid climate");
 		JRadioButton q5o4 = new JRadioButton("Mediterranean climate");
 		JRadioButton q5o5 = new JRadioButton("Subtropical climate");
-		JRadioButton q5o6 = new JRadioButton("Humid continental climate");
+		JRadioButton q5o6 = new JRadioButton("Continental climate");
 		
 		// Bounds and Format for Q5
 		q5o1.setSize(400, 50);
