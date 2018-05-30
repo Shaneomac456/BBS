@@ -264,7 +264,7 @@ public class Questionnaire {
 		JLabel q5 = new JLabel("5) What type of climate do you want to live in?");
 		q5.setSize(900,500);
 		q5.setFont(font);
-		JRadioButton q5o1 = new JRadioButton("Tropical climate.");
+		JRadioButton q5o1 = new JRadioButton("Oceanic climate.");
 		JRadioButton q5o2 = new JRadioButton("Desert climate.");
 		JRadioButton q5o3 = new JRadioButton("Semi-arid climate");
 		JRadioButton q5o4 = new JRadioButton("Mediterranean climate");
