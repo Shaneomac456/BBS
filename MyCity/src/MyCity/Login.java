@@ -4,19 +4,31 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
 public class Login {
+	public static String currentUsername;
+	static ArrayList<String> usernames;
+	static AccountInfoDB db;
+	static String myPassword;
 	public static void main(String[]args) {
 		
-		run();
+		try {
+			run();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public static void run() {
 		//JFrame for the login screen
@@ -108,8 +120,35 @@ public class Login {
 		//action listener for login button
 		login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				HomeScreen.run();
-				loginScreen.dispose();
+				char[] pass = passwordField.getPassword();
+				for (int i = 0; i < pass.length; i++) {
+					myPassword += pass[i];
+				}
+				try {
+					usernames = db.getUsernames();
+				} catch (SQLException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+				for (int i = 0; i < usernames.size(); i++) {
+					if (username.equals(usernames.get(i))) {
+						try {
+							if (db.getPassword(usernames.get(i)).equals(myPassword)) {
+								currentUsername = usernames.get(i);
+								HomeScreen.run();
+								loginScreen.dispose();
+							}
+							else {
+								JOptionPane.showMessageDialog(null, "Wrong Password. Please, try again.");
+							}
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+					}
+				}
+				JOptionPane.showMessageDialog(null, "Username does not exist. Please reenter username and password");
+				
 			}
 		});
 		
@@ -130,7 +169,14 @@ public class Login {
 			}
 		});
 		
+		try {
+			db = new AccountInfoDB();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}		
 		
 		loginScreen.setVisible(true);
 	}
 }
+	
