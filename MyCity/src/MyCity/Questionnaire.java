@@ -464,7 +464,7 @@ public class Questionnaire {
 		JRadioButton q9o2 = new JRadioButton("Tornado.");
 		JRadioButton q9o3 = new JRadioButton("Earthquake.");
 		JRadioButton q9o4 = new JRadioButton("Blizzard.");
-		JRadioButton q9o5 = new JRadioButton("Mudslide.");
+		JRadioButton q9o5 = new JRadioButton("Volcano eruption.");
 		JRadioButton q9o6 = new JRadioButton("Wildfires.");
 				
 		// Bounds and Format for Q9
