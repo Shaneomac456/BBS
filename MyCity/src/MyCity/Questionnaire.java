@@ -3,10 +3,14 @@ package MyCity;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 
 public class Questionnaire {
+	static AccountInfoDB db;
+	static String result;
 	public static void main(String[] args) {
 		run();
 	}
@@ -789,10 +793,21 @@ public class Questionnaire {
 				else {
 					missed = true;
 				}
+				try {
+					db.insertResultRecord(Login.currentUsername, result);
+				} catch (SQLException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
 				System.out.println(result);
 				if (!missed) {
 				f.setVisible(false);
-				Results.run();
+				try {
+					Results.run();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				}
 				else {
 					JOptionPane.showConfirmDialog(null, "You haven't answered all of the questions!", "WAIT!",  JOptionPane.OK_CANCEL_OPTION,  JOptionPane.WARNING_MESSAGE);
