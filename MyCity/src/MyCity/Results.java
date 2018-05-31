@@ -4,12 +4,16 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class Results {
+static AccountInfoDB db;
+	
 //variables that will show up on results screen
 static String city1;
 static String city2;
@@ -34,11 +38,11 @@ static String city8S;
 static String city9S;
 static String city10S;
 
-	public static void main(String [] args) {
+	public static void main(String [] args) throws Exception {
 		run();
 	}
 	
-	public static void run() {
+	public static void run() throws Exception {
 		//JFrame for results screen
 		JFrame results = new JFrame("Results");
 		results.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,6 +64,14 @@ static String city10S;
 		YourTopTen.setFont(topFont);
 		YourTopTen.setBounds(825, 150, 400, 75);
 		results.add(YourTopTen);
+		
+		//Finding Top 10 Matches		
+		db = new AccountInfoDB();
+		String[][] cities = db.getCities();
+		
+		for (int i = 0; i < cities.length; i++) {
+			
+		}
 		
 		//JLabel for first pick
 		city1 = "Houston, Texas";
