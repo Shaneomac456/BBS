@@ -573,222 +573,222 @@ public class Questionnaire {
 				boolean missed = false;
 				
 				// Determine the String
-				String result = "";
+				String[] result = new String[10];
 				if (q1o1.isSelected()) {
-					result += "A";
+					result[0] = "A";
 				}
 				else if(q1o2.isSelected()) {
-					result += "B";
+					result[0] =  "B";
 				}
 				else if(q1o3.isSelected()) {
-					result += "C";
+					result[0] = "C";
 				}
 				else if(q1o4.isSelected()) {
-					result += "D";
+					result[0] =  "D";
 				}
 				else if(q1o5.isSelected()) {
-					result += "E";
+					result[0] =  "E";
 				}
 				else if(q1o6.isSelected()) {
-					result += "F";
+					result[0] =  "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q2o1.isSelected()) {
-					result += "A";
+					result[1] =  "A";
 				}
 				else if(q2o2.isSelected()) {
-					result += "B";
+					result[1] = "B";
 				}
 				else if(q2o3.isSelected()) {
-					result += "C";
+					result[1] = "C";
 				}
 				else if(q2o4.isSelected()) {
-					result += "D";
+					result[1] = "D";
 				}
 				else if(q2o5.isSelected()) {
-					result += "E";
+					result[1] = "E";
 				}
 				else if(q2o6.isSelected()) {
-					result += "F";
+					result[1] = "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q3o1.isSelected()) {
-					result += "A";
+					result[2] = "A";
 				}
 				else if(q3o2.isSelected()) {
-					result += "B";
+					result[2] = "B";
 				}
 				else if(q3o3.isSelected()) {
-					result += "C";
+					result[2] = "C";
 				}
 				else if(q3o4.isSelected()) {
-					result += "D";
+					result[2] = "D";
 				}
 				else if(q3o5.isSelected()) {
-					result += "E";
+					result[2] = "E";
 				}
 				else if(q3o6.isSelected()) {
-					result += "F";
+					result[2] = "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q4o1.isSelected()) {
-					result += "A";
+					result[3] = "A";
 				}
 				else if(q4o2.isSelected()) {
-					result += "B";
+					result[3] = "B";
 				}
 				else if(q4o3.isSelected()) {
-					result += "C";
+					result[3] = "C";
 				}
 				else if(q4o4.isSelected()) {
-					result += "D";
+					result[3] = "D";
 				}
 				else if(q4o5.isSelected()) {
-					result += "E";
+					result[3] = "E";
 				}
 				else if(q4o6.isSelected()) {
-					result += "F";
+					result[3] = "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q5o1.isSelected()) {
-					result += "A";
+					result[4] = "A";
 				}
 				else if(q5o2.isSelected()) {
-					result += "B";
+					result[4] = "B";
 				}
 				else if(q5o3.isSelected()) {
-					result += "C";
+					result[4] = "C";
 				}
 				else if(q5o4.isSelected()) {
-					result += "D";
+					result[4] = "D";
 				}
 				else if(q5o5.isSelected()) {
-					result += "E";
+					result[4] = "E";
 				}
 				else if(q5o6.isSelected()) {
-					result += "F";
+					result[4] = "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q6o1.isSelected()) {
-					result += "A";
+					result[5] = "A";
 				}
 				else if(q6o2.isSelected()) {
-					result += "B";
+					result[5] = "B";
 				}
 				else if(q6o3.isSelected()) {
-					result += "C";
+					result[5] = "C";
 				}
 				else if(q6o4.isSelected()) {
-					result += "D";
+					result[5] = "D";
 				}
 				else if(q6o5.isSelected()) {
-					result += "E";
+					result[5] = "E";
 				}
 				else if(q6o6.isSelected()) {
-					result += "F";
+					result[5] = "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q7o1.isSelected()) {
-					result += "A";
+					result[6] = "A";
 				}
 				else if(q7o2.isSelected()) {
-					result += "B";
+					result[6] = "B";
 				}
 				else if(q7o3.isSelected()) {
-					result += "C";
+					result[6] = "C";
 				}
 				else if(q7o4.isSelected()) {
-					result += "D";
+					result[6] = "D";
 				}
 				else if(q7o5.isSelected()) {
-					result += "E";
+					result[6] = "E";
 				}
 				else if(q7o6.isSelected()) {
-					result += "F";
+					result[6] = "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q8o1.isSelected()) {
-					result += "A";
+					result[7] = "A";
 				}
 				else if(q8o2.isSelected()) {
-					result += "B";
+					result[7] = "B";
 				}
 				else if(q8o3.isSelected()) {
-					result += "C";
+					result[7] = "C";
 				}
 				else if(q8o4.isSelected()) {
-					result += "D";
+					result[7] = "D";
 				}
 				else if(q8o5.isSelected()) {
-					result += "E";
+					result[7] = "E";
 				}
 				else if(q8o6.isSelected()) {
-					result += "F";
+					result[7] = "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q9o1.isSelected()) {
-					result += "A";
+					result[8] = "A";
 				}
 				else if(q9o2.isSelected()) {
-					result += "B";
+					result[8] = "B";
 				}
 				else if(q9o3.isSelected()) {
-					result += "C";
+					result[8] = "C";
 				}
 				else if(q9o4.isSelected()) {
-					result += "D";
+					result[8] = "D";
 				}
 				else if(q9o5.isSelected()) {
-					result += "E";
+					result[8] = "E";
 				}
 				else if(q9o6.isSelected()) {
-					result += "F";
+					result[8] = "F";
 				}
 				else {
 					missed = true;
 					
 				}
 				if (q10o1.isSelected()) {
-					result += "A";
+					result[9] = "A";
 				}
 				else if(q10o2.isSelected()) {
-					result += "B";
+					result[9] = "B";
 				}
 				else if(q10o3.isSelected()) {
-					result += "C";
+					result[9] = "C";
 				}
 				else if(q10o4.isSelected()) {
-					result += "D";
+					result[9] = "D";
 				}
 				else if(q10o5.isSelected()) {
-					result += "E";
+					result[9] = "E";
 				}
 				else if(q10o6.isSelected()) {
-					result += "F";
+					result[9] = "F";
 				}
 				else {
 					missed = true;
