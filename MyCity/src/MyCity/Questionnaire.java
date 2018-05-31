@@ -125,8 +125,8 @@ public class Questionnaire {
 		JRadioButton q2o2 = new JRadioButton("Metropolis(1-3 million).");
 		JRadioButton q2o3 = new JRadioButton("Large City(<1 million but over 300,000).");
 		JRadioButton q2o4 = new JRadioButton("City(100,000-300,000).");
-		JRadioButton q2o5 = new JRadioButton("Large town(20,000-100,000).");
-		JRadioButton q2o6 = new JRadioButton("Town(1,000-20,000).");
+		JRadioButton q2o5 = new JRadioButton("Large town(25,000-100,000).");
+		JRadioButton q2o6 = new JRadioButton("Town(1,000-25,000).");
 		
 		// Bounds and Format for Q2
 		q2o1.setSize(400, 50);
