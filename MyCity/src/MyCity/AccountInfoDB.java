@@ -51,8 +51,8 @@ public class AccountInfoDB {
 	
 	public void insertAccountRecord(String firstName, String middleName, String lastName, String address, String email, String username, String password, 
 			String securityQuestion, String securityAnswer) throws SQLException {
-		String insert = "insert into Account_Info values('" + firstName + "', '" + middleName + "', '" + lastName + "', '" + address + "', "
-				+ "'" + email + "', '" + username + "', '" + password + "', '" + securityQuestion + "', '" + securityAnswer + "')";
+		String insert = "INSERT INTO Account_Info VALUES ('" + firstName + "', '" + middleName + "', '" + lastName + "', '" + address + "', '"
+				+ email + "', '" + username + "', '" + password + "', '" + securityQuestion + "', '" + securityAnswer + "');";
 		stmt.executeUpdate(insert);
 		System.out.println("Record inserted");
 	}
@@ -114,10 +114,9 @@ public class AccountInfoDB {
 	
 	public ArrayList<String> getUsernames() throws SQLException {
 		ArrayList<String> usernames = new ArrayList<>();
-		String selectStatement = "select Username from Account_Info";
+		String selectStatement = "SELECT Username FROM Account_Info";
 		ResultSet rs = stmt.executeQuery(selectStatement);
-		
-		while (rs.next()) {
+		while (rs.next()){						
 			username = rs.getString("Username");
 			
 			usernames.add(username);
@@ -130,6 +129,8 @@ public class AccountInfoDB {
 		String selectStatement = "select Password from Account_Info where Username = "
 				+ "'" + username + "'";
 		ResultSet rs = stmt.executeQuery(selectStatement);
+		
+		rs.next();
 		
 		password = rs.getString("Password");
 		
