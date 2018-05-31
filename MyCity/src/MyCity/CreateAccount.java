@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -251,7 +252,7 @@ public class CreateAccount {
 			}
 			
 			password = conPassField.getText();
-			encrypt();
+			encrypt(password);
 			
 			//if all fields are completed, insert values entered into database. 
 			if (missing == false) {
@@ -277,7 +278,7 @@ public class CreateAccount {
 		createAcc.setVisible(true);
 	}
 
-	public static void encrypt() {
+	public static String encrypt(String password) {
 		MessageDigest messageDigest;
 		try {
 			messageDigest = MessageDigest.getInstance("MD5");
@@ -285,8 +286,9 @@ public class CreateAccount {
 			messageDigest.update(password.getBytes(Charset.forName("UTF8")));
 			byte[] resultByte = messageDigest.digest();
 			result = new String(Hex.encodeHex(resultByte));
-			System.out.println(result);
+			return result;
 		} catch (NoSuchAlgorithmException e) {
 		}
+		return null;
 	}
 }
