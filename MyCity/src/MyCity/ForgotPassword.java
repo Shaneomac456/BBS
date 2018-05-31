@@ -58,11 +58,27 @@ public class ForgotPassword {
 		emailField.setVisible(true);
 		forgotPassword.add(emailField);
 		
+		//go back button to go back to login screen
+		JButton backButton = new JButton ("Go Back");
+		backButton.setFont(new Font("Verdana", Font.BOLD, 40));
+		backButton.setBackground(new Color(182,239,225));
+		backButton.setBounds(700, 700, 300, 75);
+		backButton.setBorderPainted(false);
+		forgotPassword.add(backButton);
+		
+		//action listener to go back to login screen
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				forgotPassword.setVisible(false);
+				Login.run();
+			}
+		});
+		
 		//next button to continue to security questions
 		JButton nextButton = new JButton ("Next");
 		nextButton.setFont(new Font("Verdana", Font.BOLD, 40));
 		nextButton.setBackground(new Color(182,239,225));
-		nextButton.setBounds(850, 700, 200, 75);
+		nextButton.setBounds(1050, 700, 200, 75);
 		nextButton.setBorderPainted(false);
 		forgotPassword.add(nextButton);
 		
@@ -119,12 +135,28 @@ public class ForgotPassword {
 				securityAField.setBackground(Color.WHITE);
 				securityAField.setVisible(true);
 				forgotPassword.add(securityAField);
+				
+				//go back button to go back to previous screen
+				JButton backButton2 = new JButton ("Go Back");
+				backButton2.setFont(new Font("Verdana", Font.BOLD, 40));
+				backButton2.setBackground(new Color(182,239,225));
+				backButton2.setBounds(700, 700, 300, 75);
+				backButton2.setBorderPainted(false);
+				forgotPassword.add(backButton2);
+				
+				//action listener to go back to previous screen
+				backButton2.addActionListener(new ActionListener() {
+					public void actionPerformed (ActionEvent e) {
+						forgotPassword.setVisible(false);
+						ForgotPassword.run();
+					}
+				});
 							
 				//next button to move onto reset password
 				JButton nextButton2 = new JButton ("Next");
 				nextButton2.setFont(new Font("Verdana", Font.BOLD, 40));
 				nextButton2.setBackground(new Color(182,239,225));
-				nextButton2.setBounds(850, 700, 200, 75);
+				nextButton2.setBounds(1050, 700, 200, 75);
 				nextButton2.setBorderPainted(false);
 				forgotPassword.add(nextButton2);
 				nextButton2.addActionListener(new ActionListener() {
@@ -164,11 +196,38 @@ public class ForgotPassword {
 						confirmPassField.setVisible(true);
 						forgotPassword.add(confirmPassField);
 						
+						//go back button to go back to previous screen
+						JButton backButton3 = new JButton ("Go Back");
+						backButton3.setFont(new Font("Verdana", Font.BOLD, 40));
+						backButton3.setBackground(new Color(182,239,225));
+						backButton3.setBounds(600, 700, 300, 75);
+						backButton3.setBorderPainted(false);
+						forgotPassword.add(backButton3);
+						
+						//action listener to go back to previous screen
+						backButton3.addActionListener(new ActionListener() {
+							public void actionPerformed (ActionEvent e) {
+								
+								forgotPassword.setVisible(false);
+								forgotPassword.getContentPane().removeAll();
+								
+								//re-add everything from the previous screen to frame
+								forgotPassword.add(securityQTitle);
+								forgotPassword.add(securityQ);
+								forgotPassword.add(questionList);
+								forgotPassword.add(securityA);
+								forgotPassword.add(securityAField);
+								forgotPassword.add(backButton2);
+								forgotPassword.add(nextButton2);
+								
+								forgotPassword.setVisible(true);
+							}
+						});
 						//reset password button which will return user to login screen
 						JButton resetPass = new JButton("Reset Password");
 						resetPass.setFont(new Font("Verdana", Font.BOLD, 40));
 						resetPass.setBackground(new Color(182,239,225));
-						resetPass.setBounds(775, 700, 400, 75);
+						resetPass.setBounds(1000, 700, 400, 75);
 						resetPass.setBorderPainted(false);
 						forgotPassword.add(resetPass);
 						
