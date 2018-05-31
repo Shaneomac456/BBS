@@ -258,7 +258,7 @@ public class CreateAccount {
 				try {
 					db.insertAccountRecord(fNameField.getText(), mNameField.getText(), lNameField.getText(), addressField.getText(), emailField.getText(), 
 								usernameField.getText(), result, questionList.getSelectedItem().toString(), securityAField.getText());
-					
+					createAcc.setVisible(false);
 					HomeScreen.run();
 				} catch (SQLException e1) {
 					
