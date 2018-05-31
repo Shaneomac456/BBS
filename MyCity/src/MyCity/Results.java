@@ -68,9 +68,21 @@ static String city10S;
 		//Finding Top 10 Matches		
 		db = new AccountInfoDB();
 		String[][] cities = db.getCities();
+		int matches = 0;
 		
 		for (int i = 0; i < cities.length; i++) {
-			
+			String[] code = new String[10];
+			for (int j = 0; j < code.length; j++) {
+				code[j] = cities[i][3].substring(i, i + 1);
+			}
+			for (int j = 0; j < code.length; j++) {
+				for (int k = 0; k < code.length; k++) {
+					if(code[j] == Questionnaire.result[k]) {
+						matches++;
+						
+					}
+				}
+			}
 		}
 		
 		//JLabel for first pick
