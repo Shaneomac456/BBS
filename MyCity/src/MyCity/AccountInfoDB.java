@@ -57,13 +57,13 @@ public class AccountInfoDB {
 		System.out.println("Record inserted");
 	}
 	
-	public void insertResultRecord(String username, String result) throws SQLException {
+	public void insertResultRecord(String username, String[] result) throws SQLException {
 		String insert = "insert into Results values('" + username + "', '" + result + "')";
 		stmt.executeUpdate(insert);
 		System.out.println("RecordInserted");
 	}
 	
-	public void insertCities() throws SQLException {
+	public static void insertCities(Statement stmt) throws SQLException {
 		String[][] cities = {{"Miami", "Florida", "FL", "AAAFEAACAC"}, {"Los Angeles", "California", "CA", "FAACDBAFCA"},
 		{"New York City", "New York", "NY", "CAAFFCCCDB"}, {"Dallas", "Texas", "TX", "BBAFEDBEBC"}, {"San Francisco", "California", "CA", "ECABDBAECD"},
 		{"Chicago", "Illinois", "IL", "DBACFCCEDB"}, {"Atlanta", "Georgia", "GA", "ACAFEDBEBF"}, {"Seattle", "Washington", "WA", "ECAFACBAEE"},
