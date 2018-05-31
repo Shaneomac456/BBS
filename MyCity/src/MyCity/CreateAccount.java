@@ -211,36 +211,68 @@ public class CreateAccount {
 		createAccButton.setBackground(new Color(182,239,225));
 		createAccButton.setBounds(600, 700, 400, 75);
 		createAccButton.setBorderPainted(false);
-		createAccButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			password = conPassField.getText();
-			encrypt();
-			try {
-				db.insertAccountRecord(fNameField.getText(), mNameField.getText(), lNameField.getText(), addressField.getText(), emailField.getText(), 
-							usernameField.getText(), result, questionList.getSelectedItem().toString(), securityAField.getText());
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			Login.currentUsername = usernameField.getText();
-			}
-		});
 		createAcc.add(createAccButton);
 		
-		//action listener for create account button
+		//action listener for create account button 
 		createAccButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				createAcc.setVisible(false);
-				HomeScreen.run();
+				
+			boolean missing;
+			//check each field to make sure that all are filled in 
+			if(fNameField.getText().equals("")) {
+				missing = true;
+			}else {
+				missing = false;
 			}
+			if(lNameField.getText().equals("")) {
+				missing = true;
+			}else {
+				missing = false;
+			}
+			if(addressField.getText().equals("")) {
+				missing = true;
+			}else {
+				missing = false;
+			}
+			if(emailField.getText().equals("")) {
+				missing = true;
+			}else {
+				missing = false;
+			}
+			if(usernameField.getText().equals("")) {
+				missing = true;
+			}else {
+				missing = false;
+			}
+			if(securityAField.getText().equals("")) {
+				missing = true;
+			}else {
+				missing = false;
+			}
+			
+			password = conPassField.getText();
+			encrypt();
+			
+			//if all fields are completed, insert values entered into database. 
+			if (missing == false) {
+				try {
+					db.insertAccountRecord(fNameField.getText(), mNameField.getText(), lNameField.getText(), addressField.getText(), emailField.getText(), 
+								usernameField.getText(), result, questionList.getSelectedItem().toString(), securityAField.getText());
+					
+					HomeScreen.run();
+				} catch (SQLException e1) {
+					
+					e1.printStackTrace();
+				}
+				Login.currentUsername = usernameField.getText();
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "You haven't entered information for all of the fields. Please complete all of them.");
+			}
+			
+			}	
 		});
 		
-		try {
-			db = new AccountInfoDB();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		
 		createAcc.setVisible(true);
 	}
