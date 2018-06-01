@@ -10,7 +10,7 @@ import javax.swing.border.Border;
 
 public class Questionnaire {
 	static AccountInfoDB db;
-	static String result;
+	static String result = new String[10];
 	public static void main(String[] args) {
 		run();
 	}
